@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, Sparkles, MessageCircle, Heart, Star } from "lucide-react";
+import { ArrowRight, Sparkles, MessageCircle, Heart, Star, MapPin, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
