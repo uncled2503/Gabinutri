@@ -168,15 +168,18 @@ export default function Index() {
           className="relative h-screen w-full overflow-hidden cursor-pointer"
           onClick={() => scrollToSection("quem-sou")}
         >
-          {/* Edge-to-edge Cinematic background - completely clean to value the background image */}
+          {/* Edge-to-edge Cinematic background */}
           <div className="absolute inset-0 z-0">
             <img 
               src="/images/gabi-hero.png" 
               alt="Gabriela Siman Full Bleed Hero Cover" 
               className="w-full h-full object-cover object-center filter brightness-95"
             />
-            {/* Soft subtle ambient shadows */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#141312]/30 via-transparent to-[#141312]/20"></div>
+            {/* Soft top gradient to keep text readable */}
+            <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#141312]/65 to-transparent z-10 pointer-events-none"></div>
+            
+            {/* Ultra Smooth, Deep and Elegant Bottom Gradient transition overlay */}
+            <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[#141312] via-[#141312]/80 to-transparent z-10 pointer-events-none"></div>
           </div>
         </section>
 
@@ -184,7 +187,7 @@ export default function Index() {
         {/* SECTION 2: QUEM SOU EU? */}
         <section 
           id="quem-sou" 
-          className="min-h-screen flex flex-col justify-center py-16 sm:py-24 px-4 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative bg-[#1c1b19]/40"
+          className="min-h-screen flex flex-col justify-center py-16 sm:py-24 px-4 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative bg-[#141312]"
         >
           {/* Subtle design backdrop glows */}
           <div className="absolute top-1/4 right-1/4 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] rounded-full bg-stone-900/40 blur-3xl -z-10 pointer-events-none"></div>
@@ -223,7 +226,7 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right Buttons & CTA Column - Floating beautifully and touching responsively */}
+            {/* Right Buttons & CTA Column */}
             <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-center items-center gap-4 sm:gap-6 lg:pl-12 w-full">
               
               {/* Special Pill button 1: Nutricionista Comportamental */}
@@ -385,7 +388,7 @@ export default function Index() {
                       Minha trajetória profissional me aproximou não apenas da nutrição comportamental, mas também do universo do neurodesenvolvimento infantil, despertando ainda mais meu interesse por seletividade alimentar, flexibilidade alimentar e autonomia nas refeições.
                     </p>
                     <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão e com muito respeito.
+                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão and com muito respeito.
                     </p>
                   </div>
 
