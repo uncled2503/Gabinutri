@@ -282,16 +282,16 @@ export default function Index() {
             {/* Content Layout - Structured beautifully below the headline */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-8 sm:pt-12 border-t border-[#E6DFD3]/15">
               
-              {/* Left Column: Premium styled Image */}
+              {/* Left Column: Premium styled Image with full auto height rendering */}
               <div className="lg:col-span-5">
-                <div className="aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
+                <div className="rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
                   <div className="absolute inset-0 bg-[#141312]/30 group-hover:bg-[#141312]/0 transition-all duration-500 z-10"></div>
                   <img 
                     src="/images/gabi-comportamental.jpg" 
                     alt="Nutricionista Comportamental" 
-                    className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110"
+                    className="w-full h-auto object-contain transition-transform duration-1000 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10 pointer-events-none"></div>
                 </div>
               </div>
 
@@ -355,16 +355,16 @@ export default function Index() {
             {/* Content Layout - Structured beautifully below the headline */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-8 sm:pt-12 border-t border-[#E6DFD3]/15">
               
-              {/* Left Column: Premium styled Image */}
+              {/* Left Column: Premium styled Image with full auto height rendering */}
               <div className="lg:col-span-5">
-                <div className="aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
+                <div className="rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
                   <div className="absolute inset-0 bg-[#141312]/30 group-hover:bg-[#141312]/0 transition-all duration-500 z-10"></div>
                   <img 
                     src="/images/gabi-terapeuta.jpg" 
                     alt="Terapeuta Alimentar" 
-                    className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110 filter brightness-[0.95]"
+                    className="w-full h-auto object-contain transition-transform duration-1000 group-hover:scale-105 filter brightness-[0.95]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10 pointer-events-none"></div>
                 </div>
               </div>
 
@@ -435,13 +435,13 @@ export default function Index() {
               {/* Exact Description matching screenshot */}
               <div className="max-w-xl space-y-5 text-[#E6DFD3]/85 text-sm sm:text-base md:text-lg font-light leading-relaxed">
                 <p>
-                  Meu propósito é ajudar crianças, adultos e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
+                  Meu propósito é ajudar crianças, adults e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
                 </p>
                 <p>
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
                 </p>
                 <p>
-                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação in algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
+                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
                 </p>
               </div>
             </div>
