@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ArrowRight, Sparkles, MessageCircle, Heart, Star, MapPin, Phone, Mail, ChevronRight, Menu, X } from "lucide-react";
+import { ArrowRight, Sparkles, MessageCircle, Heart, Star, MapPin, Phone, Mail, ChevronRight, Menu, X, ChevronDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 export default function Index() {
   const { toast } = useToast();
-  const [activeSection, setActiveSection] = useState("quem-sou");
+  const [activeSection, setActiveSection] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -16,7 +16,7 @@ export default function Index() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      const sections = ["quem-sou", "comportamental", "terapeuta", "alem"];
+      const sections = ["hero", "quem-sou", "comportamental", "terapeuta", "alem"];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -67,7 +67,7 @@ export default function Index() {
           : "bg-[#141312]/40 backdrop-blur-sm py-6 border-b border-[#E6DFD3]/5"
       }`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-3 group cursor-pointer" onClick={() => scrollToSection("quem-sou")}>
+          <div className="flex items-center gap-3 group cursor-pointer" onClick={() => scrollToSection("hero")}>
             <div className="w-8 h-8 rounded-full border border-[#E6DFD3]/30 flex items-center justify-center transition-all duration-500 group-hover:rotate-180 group-hover:border-[#E6DFD3]">
               <span className="font-serif text-[10px] font-bold text-[#E6DFD3]">G</span>
             </div>
@@ -141,39 +141,89 @@ export default function Index() {
       {/* DECK WRAPPER */}
       <main>
 
-        {/* SECTION 1: QUEM SOU EU? (FULL-BLEED CINEMATIC HERO COVER BANNER) */}
+        {/* SECTION 1: IMMERSIVE FULL-BLEED HERO COVER BANNER */}
         <section 
-          id="quem-sou" 
-          className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20"
+          id="hero" 
+          className="relative h-screen w-full flex items-end justify-start overflow-hidden"
         >
-          {/* Edge-to-edge Cinematic background with advanced overlay for high contrast */}
+          {/* Edge-to-edge Cinematic background with advanced overlay */}
           <div className="absolute inset-0 z-0">
             <img 
               src="/images/gabi-hero.png" 
-              alt="Gabriela Siman Full Bleed Hero" 
-              className="w-full h-full object-cover object-center scale-100 filter brightness-95"
+              alt="Gabriela Siman Full Bleed Hero Cover" 
+              className="w-full h-full object-cover object-center filter brightness-90 scale-100 animate-pulse duration-[8000ms]"
             />
-            {/* Soft dark overlays to keep text ultra-legible while revealing the premium image */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#141312]/95 via-[#141312]/80 to-[#141312]/30 md:to-transparent"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#141312] via-[#141312]/20 to-[#141312]/50"></div>
+            {/* Elegant multi-directional dark overlays for text styling & beauty */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#141312] via-[#141312]/30 to-[#141312]/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#141312]/80 via-transparent to-transparent"></div>
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 lg:px-24 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Hero text & action triggers at the bottom left */}
+          <div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 lg:px-24 pb-20 space-y-6">
+            <div className="space-y-2">
+              <span className="text-xs uppercase tracking-[0.35em] text-[#E6DFD3]/80 font-semibold block">
+                Nutricionista Comportamental e Terapeuta Alimentar
+              </span>
+              <h1 className="font-serif font-bold text-5xl sm:text-7xl lg:text-8xl tracking-tight text-[#E6DFD3]">
+                Gabriela Siman
+              </h1>
+            </div>
+
+            <p className="max-w-xl text-[#E6DFD3]/90 text-sm sm:text-base font-light leading-relaxed">
+              Transformando a relação com a comida em afeto, autonomia, leveza e autocuidado — sem dietas rígidas e com total respeito ao seu bem-estar.
+            </p>
+
+            <div className="pt-4 flex flex-col sm:flex-row gap-4">
+              <button 
+                onClick={() => scrollToSection("quem-sou")}
+                className="group inline-flex items-center gap-2 bg-[#E6DFD3] text-[#141312] hover:bg-stone-100 font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300"
+              >
+                Conhecer Minha História 
+                <ChevronDown className="w-4 h-4 animate-bounce" />
+              </button>
+              
+              <button 
+                onClick={() => handleBooking("Contato Geral")}
+                className="inline-flex items-center justify-center gap-2 border border-[#E6DFD3]/30 hover:border-[#E6DFD3] text-[#E6DFD3] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300 backdrop-blur-sm"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Falar no WhatsApp
+              </button>
+            </div>
+          </div>
+
+          {/* Pure Visual Smooth Indicator */}
+          <div className="absolute bottom-8 right-12 hidden lg:flex items-center gap-3 text-[#E6DFD3]/50 animate-pulse">
+            <span className="text-[10px] tracking-[0.25em] uppercase">Rolar para explorar</span>
+            <div className="w-8 h-[1px] bg-current"></div>
+          </div>
+        </section>
+
+
+        {/* SECTION 2: QUEM SOU EU? (NOW POSITIONED BEAUTIFULLY BELOW THE HERO) */}
+        <section 
+          id="quem-sou" 
+          className="min-h-screen flex flex-col justify-center py-24 px-6 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative bg-[#1c1b19]/40"
+        >
+          {/* Subtle design backdrop glows */}
+          <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-stone-900/40 blur-3xl -z-10 pointer-events-none"></div>
+
+          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6 md:space-y-8 animate-fade-in-up">
+            <div className="lg:col-span-7 space-y-8">
               <div className="flex items-center gap-3">
-                <span className="w-8 h-[1px] bg-[#E6DFD3]/50"></span>
-                <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#E6DFD3] font-semibold">
-                  Gabriela Siman
+                <span className="w-8 h-[1px] bg-[#E6DFD3]/40"></span>
+                <span className="text-xs uppercase tracking-[0.3em] text-[#E6DFD3]/70 font-semibold">
+                  Atrás do Jaleco
                 </span>
               </div>
               
-              <h1 className="font-sans font-black tracking-tighter text-[4rem] sm:text-[6rem] lg:text-[7.5rem] leading-[0.9] text-[#E6DFD3] uppercase drop-shadow-md">
+              <h2 className="font-sans font-black tracking-tighter text-[4rem] sm:text-[6rem] leading-none text-[#E6DFD3] uppercase">
                 QUEM SOU EU?
-              </h1>
+              </h2>
 
-              <div className="max-w-xl space-y-5 text-[#E6DFD3]/90 text-sm sm:text-base font-light leading-relaxed drop-shadow">
+              <div className="max-w-xl space-y-6 text-[#E6DFD3]/90 text-sm sm:text-base font-light leading-relaxed">
                 <p className="font-semibold text-white text-lg sm:text-xl">
                   Prazer, eu sou a Gabriela.
                 </p>
@@ -187,18 +237,18 @@ export default function Index() {
                   Foi através dessa visão mais humana da alimentação que me encontrei na nutrição comportamental e no cuidado com o próximo.
                 </p>
                 <p className="italic text-[#E6DFD3]/70 pt-4 border-t border-[#E6DFD3]/20">
-                  Agora, vem conhecer um pouquinho do meu lado profissional.
+                  Agora, vem conhecer um pouquinho do meu lado profissional e especialidades.
                 </p>
               </div>
             </div>
 
-            {/* Right Buttons Container - Floating Elegantly over the image backdrop */}
-            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-center items-center gap-6 lg:pl-12 lg:pt-16 w-full z-20">
+            {/* Right Buttons & CTA Column - Floating Elegantly */}
+            <div className="lg:col-span-5 flex flex-col justify-center items-center gap-6 lg:pl-12">
               
-              {/* Pill button 1: Nutricionista Comportamental */}
+              {/* Special Pill button 1: Nutricionista Comportamental */}
               <button 
                 onClick={() => scrollToSection("comportamental")}
-                className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full border border-[#E6DFD3]/30 bg-[#141312]/60 hover:border-[#E6DFD3] flex items-center justify-center transition-all duration-500 overflow-hidden backdrop-blur-sm shadow-2xl"
+                className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full border border-[#E6DFD3]/30 hover:border-[#E6DFD3] flex items-center justify-center transition-all duration-500 overflow-hidden bg-[#141312]/40 backdrop-blur-sm"
               >
                 <span className="absolute inset-0 bg-[#E6DFD3] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
                 <span className="relative text-xs tracking-[0.2em] font-bold uppercase text-[#E6DFD3] group-hover:text-[#141312] text-center px-6 leading-relaxed z-10 transition-colors duration-500">
@@ -206,10 +256,10 @@ export default function Index() {
                 </span>
               </button>
 
-              {/* Pill button 2: Terapeuta Alimentar */}
+              {/* Special Pill button 2: Terapeuta Alimentar */}
               <button 
                 onClick={() => scrollToSection("terapeuta")}
-                className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full bg-[#E6DFD3] hover:bg-stone-100 text-[#141312] flex items-center justify-center transition-all duration-500 shadow-2xl overflow-hidden"
+                className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full bg-[#E6DFD3] hover:bg-stone-100 text-[#141312] flex items-center justify-center transition-all duration-500 overflow-hidden"
               >
                 <span className="absolute inset-0 bg-white transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
                 <span className="relative text-xs tracking-[0.2em] font-bold uppercase text-center px-6 leading-relaxed z-10">
@@ -217,26 +267,18 @@ export default function Index() {
                 </span>
               </button>
 
-              <div className="hidden lg:block pt-8 self-end text-right">
-                <span className="text-[10px] tracking-[0.35em] uppercase text-[#E6DFD3]/40 font-semibold hover:text-[#E6DFD3]/80 transition-colors">
-                  Nutricionista
+              <div className="pt-6 text-center lg:text-right w-full max-w-[320px]">
+                <span className="text-[10px] tracking-[0.35em] uppercase text-[#E6DFD3]/40 font-semibold">
+                  Gabriela Siman • CRN-3
                 </span>
               </div>
             </div>
 
           </div>
-
-          {/* Elegant Section Switcher Slide Arrow */}
-          <div className="absolute bottom-10 right-12 hidden lg:flex items-center gap-4 text-[#E6DFD3]/40 hover:text-[#E6DFD3] cursor-pointer transition-all duration-500 group z-20" onClick={() => scrollToSection("comportamental")}>
-            <span className="text-[10px] tracking-[0.25em] uppercase group-hover:translate-x-1 transition-all">Nutri Comportamental</span>
-            <div className="w-16 h-[1px] bg-current relative">
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rotate-45 border-t border-r border-current transition-all group-hover:translate-x-1"></div>
-            </div>
-          </div>
         </section>
 
 
-        {/* SECTION 2: NUTRI COMPORTAMENTAL */}
+        {/* SECTION 3: NUTRI COMPORTAMENTAL */}
         <section 
           id="comportamental" 
           className="min-h-screen flex flex-col justify-center py-24 px-6 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative bg-[#1A1917]/30 overflow-hidden"
@@ -309,18 +351,10 @@ export default function Index() {
             </div>
 
           </div>
-
-          {/* Elegant Section Switcher Slide Arrow */}
-          <div className="absolute bottom-10 right-12 hidden lg:flex items-center gap-4 text-[#E6DFD3]/40 hover:text-[#E6DFD3] cursor-pointer transition-all duration-500 group" onClick={() => scrollToSection("terapeuta")}>
-            <span className="text-[10px] tracking-[0.25em] uppercase group-hover:translate-x-1 transition-all">Terapeuta Alimentar</span>
-            <div className="w-16 h-[1px] bg-current relative">
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rotate-45 border-t border-r border-current transition-all group-hover:translate-x-1"></div>
-            </div>
-          </div>
         </section>
 
 
-        {/* SECTION 3: TERAPEUTA ALIMENTAR */}
+        {/* SECTION 4: TERAPEUTA ALIMENTAR */}
         <section 
           id="terapeuta" 
           className="min-h-screen flex flex-col justify-center py-24 px-6 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative overflow-hidden"
@@ -393,18 +427,10 @@ export default function Index() {
             </div>
 
           </div>
-
-          {/* Elegant Section Switcher Slide Arrow */}
-          <div className="absolute bottom-10 right-12 hidden lg:flex items-center gap-4 text-[#E6DFD3]/40 hover:text-[#E6DFD3] cursor-pointer transition-all duration-500 group" onClick={() => scrollToSection("alem")}>
-            <span className="text-[10px] tracking-[0.25em] uppercase group-hover:translate-x-1 transition-all">Muito Além</span>
-            <div className="w-16 h-[1px] bg-current relative">
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rotate-45 border-t border-r border-current transition-all group-hover:translate-x-1"></div>
-            </div>
-          </div>
         </section>
 
 
-        {/* SECTION 4: MUITO ALÉM DA ALIMENTAÇÃO */}
+        {/* SECTION 5: MUITO ALÉM DA ALIMENTAÇÃO */}
         <section 
           id="alem" 
           className="min-h-screen flex flex-col justify-center py-24 px-6 sm:px-12 lg:px-24 relative bg-[#1A1917]/20 overflow-hidden"
