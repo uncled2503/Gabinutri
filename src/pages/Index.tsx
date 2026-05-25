@@ -63,7 +63,7 @@ export default function Index() {
       {/* PREMIUM FLOATING FIXED HEADER */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? "bg-[#141312]/90 backdrop-blur-xl py-4 border-b border-[#E6DFD3]/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+          ? "bg-[#141312]/95 backdrop-blur-xl py-4 border-b border-[#E6DFD3]/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
           : "bg-[#141312]/40 backdrop-blur-sm py-6 border-b border-[#E6DFD3]/5"
       }`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -99,7 +99,7 @@ export default function Index() {
             ))}
           </nav>
 
-          {/* Header Action Button with dynamic slider hover */}
+          {/* Header Action Button */}
           <button
             onClick={() => handleBooking("Contato Geral")}
             className="hidden sm:inline-flex relative overflow-hidden group border border-[#E6DFD3]/20 hover:border-[#E6DFD3] text-[#E6DFD3] text-[10px] uppercase tracking-widest px-6 py-3 rounded-full transition-all duration-500"
@@ -139,100 +139,95 @@ export default function Index() {
       </header>
 
       {/* DECK WRAPPER */}
-      <main className="pt-20">
+      <main>
 
-        {/* SECTION 1: QUEM SOU EU? (WITH LARGE HERO COVER BANNER) */}
+        {/* SECTION 1: QUEM SOU EU? (FULL-BLEED CINEMATIC HERO COVER BANNER) */}
         <section 
           id="quem-sou" 
-          className="min-h-[calc(100vh-80px)] flex flex-col justify-center py-16 px-6 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative overflow-hidden"
+          className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20"
         >
-          {/* Subtle elegant background ambient glows for premium UI feel */}
-          <div className="absolute top-1/4 right-0 w-[450px] h-[450px] rounded-full bg-stone-900/40 blur-3xl -z-10 animate-pulse pointer-events-none"></div>
+          {/* Edge-to-edge Cinematic background with advanced overlay for high contrast */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/images/gabi-hero.png" 
+              alt="Gabriela Siman Full Bleed Hero" 
+              className="w-full h-full object-cover object-center scale-100 filter brightness-95"
+            />
+            {/* Soft dark overlays to keep text ultra-legible while revealing the premium image */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#141312]/95 via-[#141312]/80 to-[#141312]/30 md:to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#141312] via-[#141312]/20 to-[#141312]/50"></div>
+          </div>
 
-          <div className="max-w-7xl mx-auto w-full space-y-16 animate-fade-in">
+          <div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 lg:px-24 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* FULL HERO COVER BANNER - EXQUISITELY ENHANCED FOR UX & REVEALS */}
-            <div className="w-full rounded-2xl md:rounded-3xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-950 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] relative group">
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all duration-700 z-10"></div>
-              <img 
-                src="/images/gabi-hero.png" 
-                alt="Gabriela Siman Banner" 
-                className="w-full h-auto object-cover min-h-[240px] md:min-h-[480px] scale-[1.02] group-hover:scale-100 transition-transform duration-1000"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#141312]/80 via-transparent to-transparent z-10"></div>
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 space-y-6 md:space-y-8 animate-fade-in-up">
+              <div className="flex items-center gap-3">
+                <span className="w-8 h-[1px] bg-[#E6DFD3]/50"></span>
+                <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#E6DFD3] font-semibold">
+                  Gabriela Siman
+                </span>
+              </div>
+              
+              <h1 className="font-sans font-black tracking-tighter text-[4rem] sm:text-[6rem] lg:text-[7.5rem] leading-[0.9] text-[#E6DFD3] uppercase drop-shadow-md">
+                QUEM SOU EU?
+              </h1>
+
+              <div className="max-w-xl space-y-5 text-[#E6DFD3]/90 text-sm sm:text-base font-light leading-relaxed drop-shadow">
+                <p className="font-semibold text-white text-lg sm:text-xl">
+                  Prazer, eu sou a Gabriela.
+                </p>
+                <p>
+                  Para além da nutrição, sou apaixonada por um docinho e acho que quando o almoço tem tropeiro o dia fica automaticamente melhor.
+                </p>
+                <p>
+                  Acredito que o alimento não deve ser visto apenas como calorias ou nutrientes, mas como afeto, emoção, memória e cuidado. Comida também é abraço, lembrança, acolhimento e conexão.
+                </p>
+                <p>
+                  Foi através dessa visão mais humana da alimentação que me encontrei na nutrição comportamental e no cuidado com o próximo.
+                </p>
+                <p className="italic text-[#E6DFD3]/70 pt-4 border-t border-[#E6DFD3]/20">
+                  Agora, vem conhecer um pouquinho do meu lado profissional.
+                </p>
+              </div>
             </div>
 
-            {/* Split Columns below the beautiful cover banner */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-4">
+            {/* Right Buttons Container - Floating Elegantly over the image backdrop */}
+            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-center items-center gap-6 lg:pl-12 lg:pt-16 w-full z-20">
               
-              {/* Left Content */}
-              <div className="lg:col-span-7 space-y-8">
-                <div className="flex items-center gap-3">
-                  <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
-                  <span className="text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60 font-semibold">Gabriela Siman</span>
-                </div>
-                
-                <h1 className="font-sans font-black tracking-tighter text-[4.5rem] sm:text-[6rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
-                  QUEM SOU EU?
-                </h1>
+              {/* Pill button 1: Nutricionista Comportamental */}
+              <button 
+                onClick={() => scrollToSection("comportamental")}
+                className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full border border-[#E6DFD3]/30 bg-[#141312]/60 hover:border-[#E6DFD3] flex items-center justify-center transition-all duration-500 overflow-hidden backdrop-blur-sm shadow-2xl"
+              >
+                <span className="absolute inset-0 bg-[#E6DFD3] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
+                <span className="relative text-xs tracking-[0.2em] font-bold uppercase text-[#E6DFD3] group-hover:text-[#141312] text-center px-6 leading-relaxed z-10 transition-colors duration-500">
+                  Nutricionista<br/>Comportamental
+                </span>
+              </button>
 
-                <div className="max-w-xl space-y-6 text-[#E6DFD3]/85 text-sm sm:text-base font-light leading-relaxed">
-                  <p className="font-semibold text-[#E6DFD3] text-lg">
-                    Prazer, eu sou a Gabriela.
-                  </p>
-                  <p>
-                    Para além da nutrição, sou apaixonada por um docinho e acho que quando o almoço tem tropeiro o dia fica automaticamente melhor.
-                  </p>
-                  <p>
-                    Acredito que o alimento não deve ser visto apenas como calorias ou nutrientes, mas como afeto, emoção, memória e cuidado. Comida também é abraço, lembrança, acolhimento e conexão.
-                  </p>
-                  <p>
-                    Foi através dessa visão mais humana da alimentação que me encontrei na nutrição comportamental e no cuidado com o próximo.
-                  </p>
-                  <p className="italic text-[#E6DFD3]/60 pt-4 border-t border-[#E6DFD3]/15">
-                    Agora, vem conhecer um pouquinho do meu lado profissional.
-                  </p>
-                </div>
+              {/* Pill button 2: Terapeuta Alimentar */}
+              <button 
+                onClick={() => scrollToSection("terapeuta")}
+                className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full bg-[#E6DFD3] hover:bg-stone-100 text-[#141312] flex items-center justify-center transition-all duration-500 shadow-2xl overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-white transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
+                <span className="relative text-xs tracking-[0.2em] font-bold uppercase text-center px-6 leading-relaxed z-10">
+                  Terapeuta<br/>Alimentar
+                </span>
+              </button>
+
+              <div className="hidden lg:block pt-8 self-end text-right">
+                <span className="text-[10px] tracking-[0.35em] uppercase text-[#E6DFD3]/40 font-semibold hover:text-[#E6DFD3]/80 transition-colors">
+                  Nutricionista
+                </span>
               </div>
-
-              {/* Right Buttons Container with extreme high-end styling and no dots */}
-              <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-center items-center gap-6 lg:pl-12 lg:pt-16 w-full">
-                
-                {/* Pill button 1: Nutricionista Comportamental */}
-                <button 
-                  onClick={() => scrollToSection("comportamental")}
-                  className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full border border-[#E6DFD3]/30 hover:border-[#E6DFD3] flex items-center justify-center transition-all duration-500 overflow-hidden"
-                >
-                  <span className="absolute inset-0 bg-[#E6DFD3]/5 group-hover:bg-[#E6DFD3] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
-                  <span className="relative text-xs tracking-[0.2em] font-bold uppercase text-[#E6DFD3] group-hover:text-[#141312] text-center px-6 leading-relaxed z-10 transition-colors duration-500">
-                    Nutricionista<br/>Comportamental
-                  </span>
-                </button>
-
-                {/* Pill button 2: Terapeuta Alimentar */}
-                <button 
-                  onClick={() => scrollToSection("terapeuta")}
-                  className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full bg-[#E6DFD3] hover:bg-stone-100 text-[#141312] flex items-center justify-center transition-all duration-500 shadow-2xl overflow-hidden hover:shadow-[0_15px_30px_-5px_rgba(230,223,211,0.2)]"
-                >
-                  <span className="absolute inset-0 bg-white transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
-                  <span className="relative text-xs tracking-[0.2em] font-bold uppercase text-center px-6 leading-relaxed z-10 transition-transform duration-500">
-                    Terapeuta<br/>Alimentar
-                  </span>
-                </button>
-
-                <div className="hidden lg:block pt-8 self-end text-right transition-all duration-500">
-                  <span className="text-[10px] tracking-[0.35em] uppercase text-[#E6DFD3]/30 font-semibold hover:text-[#E6DFD3]/60 transition-colors">
-                    Nutricionista
-                  </span>
-                </div>
-              </div>
-
             </div>
 
           </div>
 
           {/* Elegant Section Switcher Slide Arrow */}
-          <div className="absolute bottom-10 right-12 hidden lg:flex items-center gap-4 text-[#E6DFD3]/40 hover:text-[#E6DFD3] cursor-pointer transition-all duration-500 group" onClick={() => scrollToSection("comportamental")}>
+          <div className="absolute bottom-10 right-12 hidden lg:flex items-center gap-4 text-[#E6DFD3]/40 hover:text-[#E6DFD3] cursor-pointer transition-all duration-500 group z-20" onClick={() => scrollToSection("comportamental")}>
             <span className="text-[10px] tracking-[0.25em] uppercase group-hover:translate-x-1 transition-all">Nutri Comportamental</span>
             <div className="w-16 h-[1px] bg-current relative">
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rotate-45 border-t border-r border-current transition-all group-hover:translate-x-1"></div>
@@ -276,7 +271,7 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Content columns matching the layout exactly with high-end typography and design */}
+            {/* Content columns matching the layout exactly */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pt-12 border-t border-[#E6DFD3]/15">
               
               {/* Col 1 */}
@@ -456,7 +451,7 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right Large Photo Frame (WITHOUT cyan dot) */}
+            {/* Right Large Photo Frame */}
             <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center">
               <div className="w-full max-w-md aspect-[1.78/1] rounded-3xl overflow-hidden border border-[#E6DFD3]/10 bg-[#1A1917] shadow-[0_30px_60px_-10px_rgba(0,0,0,0.85)] relative group cursor-pointer">
                 <div className="absolute inset-0 bg-[#141312]/20 group-hover:bg-transparent transition-all duration-750 z-10"></div>
