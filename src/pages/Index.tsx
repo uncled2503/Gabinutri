@@ -451,63 +451,69 @@ export default function Index() {
         </section>
 
 
-        {/* SECTION 5: MUITO ALÉM DA ALIMENTAÇÃO */}
+        {/* SECTION 5: MUITO ALÉM DA ALIMENTAÇÃO - DESIGN EXCLUSIVO DE CAPA COM CORTE */}
         <section 
           id="alem" 
-          className="min-h-screen flex flex-col justify-center py-16 sm:py-24 px-4 sm:px-12 lg:px-24 relative bg-[#1A1917]/20 overflow-hidden"
+          className="min-h-screen flex flex-col justify-end py-12 md:py-20 px-6 sm:px-12 lg:px-24 relative bg-[#0F0E0D] overflow-hidden"
         >
-          <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-stone-900/15 blur-3xl -z-10 pointer-events-none"></div>
+          {/* Linha/Seta de Transição de Alta Classe no canto superior direito */}
+          <div className="absolute top-10 md:top-16 right-8 md:right-16 hidden sm:flex items-center gap-4 text-[#E6DFD3]/80 group cursor-pointer" onClick={() => handleBooking("Muito Além da Alimentação")}>
+            <span className="w-16 h-[1.5px] bg-[#E6DFD3]/80 transition-all duration-500 group-hover:w-24"></span>
+            <ChevronRight className="w-6 h-6 -ml-2 transition-transform duration-500 group-hover:translate-x-2" />
+          </div>
 
-          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-center">
+          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end relative z-10">
             
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6 sm:space-y-8 order-2 lg:order-1">
-              <div className="flex items-center gap-3">
-                <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60">Filosofia de Trabalho</span>
+            {/* Bloco Esquerdo de Texto do Layout de Capa */}
+            <div className="lg:col-span-6 space-y-6 md:space-y-12 text-left pb-4 lg:pb-12">
+              
+              {/* Header de Assinatura Curta */}
+              <div className="space-y-2">
+                <span className="text-sm font-sans tracking-[0.18em] text-[#E6DFD3] block font-medium">
+                  Gabriela Siman
+                </span>
+                <div className="w-4 h-4 rounded-full bg-[#00A896] mt-1.5 shadow-[0_0_10px_rgba(0,168,150,0.6)]"></div>
               </div>
               
-              <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
-                MUITO ALÉM DA ALIMENTAÇÃO
+              {/* Heading Gigante Condensado */}
+              <h2 className="font-sans font-black tracking-tight text-5xl sm:text-7xl lg:text-[5.5rem] leading-[0.9] text-[#E6DFD3] uppercase select-none">
+                MUITO ALÉM DA<br/>ALIMENTAÇÃO
               </h2>
 
-              <div className="max-w-xl space-y-5 sm:space-y-6 text-[#E6DFD3]/85 text-sm sm:text-base font-light leading-relaxed">
+              {/* Descrição em Prosa de Alta Qualidade */}
+              <div className="max-w-xl space-y-4 text-[#E6DFD3]/80 text-sm md:text-base font-light leading-relaxed">
                 <p>
                   Meu propósito é ajudar crianças, adultos e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
                 </p>
                 <p>
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
                 </p>
-                <p>
-                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possible, leve e seguro. <span className="text-amber-300">🌟</span>
+                <p className="flex items-center gap-2">
+                  <span>Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro.</span>
+                  <span className="text-amber-400 font-bold shrink-0">★</span>
                 </p>
               </div>
 
-              {/* Touch Target Optimization with 56px minimum touch-size wrapper */}
-              <div className="pt-4">
+              {/* Botão de Contato Otimizado */}
+              <div className="pt-2">
                 <button 
                   onClick={() => handleBooking("Muito Além da Alimentação")}
-                  className="group w-full sm:w-auto relative overflow-hidden inline-flex items-center justify-center gap-3 bg-[#E6DFD3] text-[#141312] font-bold uppercase tracking-[0.2em] text-xs px-8 py-5 sm:px-10 sm:py-6 rounded-full transition-all duration-500 shadow-[0_20px_45px_-10px_rgba(230,223,211,0.3)] hover:shadow-[0_25px_50px_-5px_rgba(230,223,211,0.45)] hover:-translate-y-1 active:scale-95"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#E6DFD3] text-[#141312] font-bold uppercase tracking-[0.2em] text-[11px] px-8 py-4.5 rounded-full transition-all duration-300 hover:bg-stone-100 hover:shadow-[0_15px_30px_rgba(230,223,211,0.2)] active:scale-95"
                 >
-                  <span className="absolute inset-0 w-full h-full bg-white origin-top transform scale-y-0 transition-transform duration-500 group-hover:scale-y-100 z-0"></span>
-                  <span className="relative z-10 flex items-center gap-3">
-                    <MessageCircle className="w-4 h-4 transition-transform group-hover:scale-110" />
-                    Entrar em contato agora
-                  </span>
+                  <MessageCircle className="w-4 h-4" />
+                  Entrar em contato agora
                 </button>
               </div>
             </div>
 
-            {/* Right Large Photo Frame */}
-            <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center w-full">
-              <div className="w-full max-w-md aspect-[16/10] sm:aspect-[1.78/1] rounded-3xl overflow-hidden border border-[#E6DFD3]/10 bg-[#1A1917] shadow-[0_30px_60px_-10px_rgba(0,0,0,0.85)] relative group cursor-pointer">
-                <div className="absolute inset-0 bg-[#141312]/20 group-hover:bg-transparent transition-all duration-750 z-10"></div>
-                <img 
-                  src="/images/gabi-hero.png" 
-                  alt="Gabriela Siman - Muito além da nutrição" 
-                  className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105"
-                />
-              </div>
+            {/* Bloco Direito com o Recorte Moderno da Foto */}
+            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[450px] sm:h-[600px] lg:h-[700px]">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F0E0D] via-transparent to-transparent z-10 pointer-events-none"></div>
+              <img 
+                src="/images/gabi-cutout.png" 
+                alt="Gabriela Siman Cutout Portrait" 
+                className="w-full h-full object-contain object-bottom select-none pointer-events-none filter brightness-[0.98] drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] transform translate-y-2"
+              />
             </div>
 
           </div>
