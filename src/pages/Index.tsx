@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Sparkles, MessageCircle, Heart, Star, MapPin, Phone, Mail, ChevronRight, Menu, X, ChevronDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 
 export default function Index() {
   const { toast } = useToast();
@@ -480,7 +479,7 @@ export default function Index() {
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
                 </p>
                 <p>
-                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro. <span className="text-amber-300">🌟</span>
+                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possible, leve e seguro. <span className="text-amber-300">🌟</span>
                 </p>
               </div>
 
@@ -564,7 +563,6 @@ export default function Index() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-[#E6DFD3]/10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-light text-[#E6DFD3]/40 text-center md:text-left">
           <p>Nutrição Ética e Comportamental Baseada em Evidências.</p>
-          <MadeWithDyad />
         </div>
       </footer>
 
