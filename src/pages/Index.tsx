@@ -80,80 +80,86 @@ export default function Index() {
       {/* DECK WRAPPER */}
       <main className="pt-20">
 
-        {/* SECTION 1: QUEM SOU EU? */}
+        {/* SECTION 1: QUEM SOU EU? (WITH LARGE HERO COVER BANNER) */}
         <section 
           id="quem-sou" 
-          className="min-h-[calc(100vh-80px)] flex flex-col justify-center py-16 px-6 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative overflow-hidden"
+          className="min-h-[calc(100vh-80px)] flex flex-col justify-center py-12 px-6 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative overflow-hidden"
         >
-          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="max-w-7xl mx-auto w-full space-y-12">
             
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-8">
-              <span className="text-xs uppercase tracking-widest text-[#E6DFD3]/40">Gabriela Siman</span>
-              
-              <h1 className="font-sans font-black tracking-tighter text-[4.5rem] sm:text-[6.5rem] leading-none text-[#E6DFD3] uppercase">
-                QUEM SOU EU?
-              </h1>
-
-              <div className="max-w-xl space-y-6 text-[#E6DFD3]/80 text-sm sm:text-base font-light leading-relaxed">
-                <p className="font-semibold text-[#E6DFD3] text-lg">
-                  Prazer, eu sou a Gabriela.
-                </p>
-                <p>
-                  Para além da nutrição, sou apaixonada por um docinho e acho que quando o almoço tem tropeiro o dia fica automaticamente melhor.
-                </p>
-                <p>
-                  Acredito que o alimento não deve ser visto apenas como calorias ou nutrientes, mas como afeto, emoção, memória e cuidado. Comida também é abraço, lembrança, acolhimento e conexão.
-                </p>
-                <p>
-                  Foi através dessa visão mais humana da alimentação que me encontrei na nutrição comportamental e no cuidado com o próximo.
-                </p>
-                <p className="italic text-[#E6DFD3]/60 pt-2 border-t border-[#E6DFD3]/10">
-                  Agora, vem conhecer um pouquinho do meu lado profissional.
-                </p>
-              </div>
+            {/* FULL HERO COVER BANNER - SHOWS THE ENTIRE IMAGE AS USER REQUESTED */}
+            <div className="w-full rounded-2xl md:rounded-3xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-950 shadow-2xl relative">
+              <img 
+                src="/images/gabi-hero.png" 
+                alt="Gabriela Siman Banner" 
+                className="w-full h-auto object-cover min-h-[220px] md:min-h-[450px]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
 
-            {/* Right Buttons Container with the newly updated Gabi image as background card */}
-            <div className="lg:col-span-5 flex flex-col justify-center items-center gap-6 lg:pl-12">
+            {/* Split Columns below the beautiful cover banner */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               
-              {/* Premium presentation of Gabi's cover frame */}
-              <div className="w-full max-w-sm aspect-[1.78/1] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-xl mb-4">
-                <img 
-                  src="/images/gabi-hero.png" 
-                  alt="Gabriela Siman" 
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-
-              {/* Pill button 1: Nutricionista Comportamental */}
-              <button 
-                onClick={() => scrollToSection("comportamental")}
-                className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full border border-[#E6DFD3]/30 hover:border-[#E6DFD3] flex items-center justify-center transition-all duration-300"
-              >
-                {/* Cyan indicator dot exactly as in screenshot */}
-                <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#13C2C2] shadow-lg shadow-[#13C2C2]/50"></div>
+              {/* Left Content */}
+              <div className="lg:col-span-7 space-y-8">
+                <span className="text-xs uppercase tracking-widest text-[#E6DFD3]/40">Gabriela Siman</span>
                 
-                <span className="text-xs tracking-widest font-bold uppercase text-[#E6DFD3] text-center px-6 leading-relaxed">
-                  Nutricionista<br/>Comportamental
-                </span>
-              </button>
+                <h1 className="font-sans font-black tracking-tighter text-[4rem] sm:text-[5.5rem] leading-none text-[#E6DFD3] uppercase">
+                  QUEM SOU EU?
+                </h1>
 
-              {/* Pill button 2: Terapeuta Alimentar */}
-              <button 
-                onClick={() => scrollToSection("terapeuta")}
-                className="w-full max-w-[320px] aspect-[2.6/1] rounded-full bg-[#E6DFD3] hover:bg-[#F5EFE4] text-[#141312] flex items-center justify-center transition-all duration-300 shadow-xl"
-              >
-                <span className="text-xs tracking-widest font-bold uppercase text-center px-6 leading-relaxed">
-                  Terapeuta<br/>Alimentar
-                </span>
-              </button>
-
-              <div className="hidden lg:block pt-4 self-end text-right">
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[#E6DFD3]/30 font-semibold">
-                  Nutricionista
-                </span>
+                <div className="max-w-xl space-y-6 text-[#E6DFD3]/80 text-sm sm:text-base font-light leading-relaxed">
+                  <p className="font-semibold text-[#E6DFD3] text-lg">
+                    Prazer, eu sou a Gabriela.
+                  </p>
+                  <p>
+                    Para além da nutrição, sou apaixonada por um docinho e acho que quando o almoço tem tropeiro o dia fica automaticamente melhor.
+                  </p>
+                  <p>
+                    Acredito que o alimento não deve ser visto apenas como calorias ou nutrientes, mas como afeto, emoção, memória e cuidado. Comida também é abraço, lembrança, acolhimento e conexão.
+                  </p>
+                  <p>
+                    Foi através dessa visão mais humana da alimentação que me encontrei na nutrição comportamental e no cuidado com o próximo.
+                  </p>
+                  <p className="italic text-[#E6DFD3]/60 pt-2 border-t border-[#E6DFD3]/10">
+                    Agora, vem conhecer um pouquinho do meu lado profissional.
+                  </p>
+                </div>
               </div>
+
+              {/* Right Buttons Container */}
+              <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-center items-center gap-6 lg:pl-12 lg:pt-16">
+                
+                {/* Pill button 1: Nutricionista Comportamental */}
+                <button 
+                  onClick={() => scrollToSection("comportamental")}
+                  className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full border border-[#E6DFD3]/30 hover:border-[#E6DFD3] flex items-center justify-center transition-all duration-300"
+                >
+                  {/* Cyan indicator dot exactly as in screenshot */}
+                  <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#13C2C2] shadow-lg shadow-[#13C2C2]/50"></div>
+                  
+                  <span className="text-xs tracking-widest font-bold uppercase text-[#E6DFD3] text-center px-6 leading-relaxed">
+                    Nutricionista<br/>Comportamental
+                  </span>
+                </button>
+
+                {/* Pill button 2: Terapeuta Alimentar */}
+                <button 
+                  onClick={() => scrollToSection("terapeuta")}
+                  className="w-full max-w-[320px] aspect-[2.6/1] rounded-full bg-[#E6DFD3] hover:bg-[#F5EFE4] text-[#141312] flex items-center justify-center transition-all duration-300 shadow-xl"
+                >
+                  <span className="text-xs tracking-widest font-bold uppercase text-center px-6 leading-relaxed">
+                    Terapeuta<br/>Alimentar
+                  </span>
+                </button>
+
+                <div className="hidden lg:block pt-8 self-end text-right">
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#E6DFD3]/30 font-semibold">
+                    Nutricionista
+                  </span>
+                </div>
+              </div>
+
             </div>
 
           </div>
