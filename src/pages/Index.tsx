@@ -60,18 +60,18 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-[#141312] text-[#E6DFD3] font-sans selection:bg-[#E6DFD3] selection:text-[#141312] antialiased scroll-smooth">
       
-      {/* PREMIUM FLOATING FIXED HEADER */}
+      {/* PREMIUM FLOATING FIXED HEADER - Highly Responsive */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? "bg-[#141312]/95 backdrop-blur-xl py-4 border-b border-[#E6DFD3]/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
-          : "bg-[#141312]/40 backdrop-blur-sm py-6 border-b border-[#E6DFD3]/5"
+          ? "bg-[#141312]/95 backdrop-blur-xl py-3 md:py-4 border-b border-[#E6DFD3]/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+          : "bg-[#141312]/40 backdrop-blur-sm py-4 md:py-6 border-b border-[#E6DFD3]/5"
       }`}>
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-3 group cursor-pointer" onClick={() => scrollToSection("hero")}>
-            <div className="w-8 h-8 rounded-full border border-[#E6DFD3]/30 flex items-center justify-center transition-all duration-500 group-hover:rotate-180 group-hover:border-[#E6DFD3]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <div className="flex items-center gap-2.5 group cursor-pointer" onClick={() => scrollToSection("hero")}>
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#E6DFD3]/30 flex items-center justify-center transition-all duration-500 group-hover:rotate-180 group-hover:border-[#E6DFD3]">
               <span className="font-serif text-[10px] font-bold text-[#E6DFD3]">G</span>
             </div>
-            <span className="font-serif text-sm tracking-[0.25em] uppercase font-semibold text-[#E6DFD3] transition-colors duration-300 group-hover:text-[#F5EFE4]">
+            <span className="font-serif text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.25em] uppercase font-semibold text-[#E6DFD3] transition-colors duration-300 group-hover:text-[#F5EFE4]">
               Gabriela Siman
             </span>
           </div>
@@ -110,30 +110,52 @@ export default function Index() {
             </span>
           </button>
 
-          {/* Mobile Menu Trigger */}
+          {/* Mobile Menu Trigger with improved padding touch zone */}
           <button 
-            className="md:hidden text-[#E6DFD3] hover:text-[#DECBB7] transition-colors"
+            className="md:hidden p-2 -mr-2 text-[#E6DFD3] hover:text-[#DECBB7] transition-colors focus:outline-none"
+            aria-label="Toggle Menu"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 animate-pulse" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Mobile Navigation Dropdown Menu */}
-        <div className={`md:hidden absolute top-full left-0 right-0 bg-[#141312]/95 border-b border-[#E6DFD3]/10 backdrop-blur-2xl transition-all duration-500 ${
+        {/* Mobile Navigation Dropdown Menu - Highly Polished and Blur Focused */}
+        <div className={`md:hidden fixed top-[56px] left-0 right-0 bottom-0 bg-[#141312]/98 border-t border-[#E6DFD3]/10 backdrop-blur-3xl transition-all duration-500 z-50 flex flex-col justify-between ${
           mobileMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-5 pointer-events-none"
         }`}>
-          <div className="px-6 py-8 flex flex-col gap-6 text-sm uppercase tracking-widest">
-            <button onClick={() => scrollToSection("quem-sou")} className={`text-left py-2 ${activeSection === "quem-sou" ? "text-white font-semibold" : "text-[#E6DFD3]/60"}`}>Quem Sou Eu</button>
-            <button onClick={() => scrollToSection("comportamental")} className={`text-left py-2 ${activeSection === "comportamental" ? "text-white font-semibold" : "text-[#E6DFD3]/60"}`}>Nutri Comportamental</button>
-            <button onClick={() => scrollToSection("terapeuta")} className={`text-left py-2 ${activeSection === "terapeuta" ? "text-white font-semibold" : "text-[#E6DFD3]/60"}`}>Terapeuta Alimentar</button>
-            <button onClick={() => scrollToSection("alem")} className={`text-left py-2 ${activeSection === "alem" ? "text-white font-semibold" : "text-[#E6DFD3]/60"}`}>Muito Além</button>
+          <div className="px-6 py-8 flex flex-col gap-6 text-sm sm:text-base uppercase tracking-widest font-semibold">
+            {[
+              { id: "quem-sou", label: "Quem Sou Eu" },
+              { id: "comportamental", label: "Nutri Comportamental" },
+              { id: "terapeuta", label: "Terapeuta Alimentar" },
+              { id: "alem", label: "Muito Além" }
+            ].map((item, index) => (
+              <button 
+                key={item.id}
+                onClick={() => scrollToSection(item.id)} 
+                style={{ animationDelay: `${index * 75}ms` }}
+                className={`text-left py-3 border-b border-[#E6DFD3]/5 flex items-center justify-between transition-colors ${
+                  activeSection === item.id ? "text-white" : "text-[#E6DFD3]/60"
+                } ${mobileMenuOpen ? "animate-fade-in-up" : ""}`}
+              >
+                <span>{item.label}</span>
+                <ChevronRight className="w-4 h-4 text-[#E6DFD3]/30" />
+              </button>
+            ))}
+          </div>
+
+          <div className="p-6 bg-[#0B0A09]/90 border-t border-[#E6DFD3]/10 space-y-4">
             <button
               onClick={() => handleBooking("Contato Mobile")}
-              className="mt-4 w-full bg-[#E6DFD3] text-[#141312] text-xs uppercase tracking-widest py-4 rounded-full font-bold text-center"
+              className="w-full bg-[#E6DFD3] text-[#141312] text-xs uppercase tracking-widest py-4 rounded-full font-bold text-center flex items-center justify-center gap-2 active:scale-95 transition-transform"
             >
+              <MessageCircle className="w-4 h-4" />
               Falar no WhatsApp
             </button>
+            <p className="text-[10px] text-center text-[#E6DFD3]/40 tracking-wider">
+              Gabriela Siman • CRN-3 / 123456
+            </p>
           </div>
         </div>
       </header>
@@ -154,29 +176,29 @@ export default function Index() {
               className="w-full h-full object-cover object-center filter brightness-90 scale-100 animate-pulse duration-[8000ms]"
             />
             {/* Elegant multi-directional dark overlays for text styling & beauty */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#141312] via-[#141312]/30 to-[#141312]/60"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#141312]/80 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#141312] via-[#141312]/40 to-[#141312]/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#141312]/90 via-[#141312]/20 to-transparent"></div>
           </div>
 
-          {/* Hero text & action triggers at the bottom left */}
-          <div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 lg:px-24 pb-20 space-y-6">
+          {/* Hero text & action triggers at the bottom left - highly responsive paddings */}
+          <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-12 lg:px-24 pb-16 sm:pb-20 space-y-5 sm:space-y-6">
             <div className="space-y-2">
-              <span className="text-xs uppercase tracking-[0.35em] text-[#E6DFD3]/80 font-semibold block">
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-[#E6DFD3]/80 font-semibold block">
                 Nutricionista Comportamental e Terapeuta Alimentar
               </span>
-              <h1 className="font-serif font-bold text-5xl sm:text-7xl lg:text-8xl tracking-tight text-[#E6DFD3]">
+              <h1 className="font-serif font-bold text-4xl sm:text-7xl lg:text-8xl tracking-tight text-[#E6DFD3]">
                 Gabriela Siman
               </h1>
             </div>
 
-            <p className="max-w-xl text-[#E6DFD3]/90 text-sm sm:text-base font-light leading-relaxed">
+            <p className="max-w-xl text-[#E6DFD3]/95 text-xs sm:text-base font-light leading-relaxed">
               Transformando a relação com a comida em afeto, autonomia, leveza e autocuidado — sem dietas rígidas e com total respeito ao seu bem-estar.
             </p>
 
-            <div className="pt-4 flex flex-col sm:flex-row gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button 
                 onClick={() => scrollToSection("quem-sou")}
-                className="group inline-flex items-center gap-2 bg-[#E6DFD3] text-[#141312] hover:bg-stone-100 font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#E6DFD3] text-[#141312] hover:bg-stone-100 font-semibold text-xs uppercase tracking-widest px-6 py-4 rounded-full transition-all duration-300"
               >
                 Conhecer Minha História 
                 <ChevronDown className="w-4 h-4 animate-bounce" />
@@ -184,7 +206,7 @@ export default function Index() {
               
               <button 
                 onClick={() => handleBooking("Contato Geral")}
-                className="inline-flex items-center justify-center gap-2 border border-[#E6DFD3]/30 hover:border-[#E6DFD3] text-[#E6DFD3] font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300 backdrop-blur-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-[#E6DFD3]/30 hover:border-[#E6DFD3] text-[#E6DFD3] font-semibold text-xs uppercase tracking-widest px-6 py-4 rounded-full transition-all duration-300 backdrop-blur-sm"
               >
                 <MessageCircle className="w-4 h-4" />
                 Falar no WhatsApp
@@ -200,30 +222,30 @@ export default function Index() {
         </section>
 
 
-        {/* SECTION 2: QUEM SOU EU? (NOW POSITIONED BEAUTIFULLY BELOW THE HERO) */}
+        {/* SECTION 2: QUEM SOU EU? */}
         <section 
           id="quem-sou" 
-          className="min-h-screen flex flex-col justify-center py-24 px-6 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative bg-[#1c1b19]/40"
+          className="min-h-screen flex flex-col justify-center py-16 sm:py-24 px-4 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative bg-[#1c1b19]/40"
         >
           {/* Subtle design backdrop glows */}
-          <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-stone-900/40 blur-3xl -z-10 pointer-events-none"></div>
+          <div className="absolute top-1/4 right-1/4 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] rounded-full bg-stone-900/40 blur-3xl -z-10 pointer-events-none"></div>
 
-          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-8">
+            <div className="lg:col-span-7 space-y-6 sm:space-y-8">
               <div className="flex items-center gap-3">
                 <span className="w-8 h-[1px] bg-[#E6DFD3]/40"></span>
-                <span className="text-xs uppercase tracking-[0.3em] text-[#E6DFD3]/70 font-semibold">
+                <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#E6DFD3]/70 font-semibold">
                   Atrás do Jaleco
                 </span>
               </div>
               
-              <h2 className="font-sans font-black tracking-tighter text-[4rem] sm:text-[6rem] leading-none text-[#E6DFD3] uppercase">
+              <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6rem] leading-none text-[#E6DFD3] uppercase">
                 QUEM SOU EU?
               </h2>
 
-              <div className="max-w-xl space-y-6 text-[#E6DFD3]/90 text-sm sm:text-base font-light leading-relaxed">
+              <div className="max-w-xl space-y-5 sm:space-y-6 text-[#E6DFD3]/90 text-sm sm:text-base font-light leading-relaxed">
                 <p className="font-semibold text-white text-lg sm:text-xl">
                   Prazer, eu sou a Gabriela.
                 </p>
@@ -242,16 +264,16 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right Buttons & CTA Column - Floating Elegantly */}
-            <div className="lg:col-span-5 flex flex-col justify-center items-center gap-6 lg:pl-12">
+            {/* Right Buttons & CTA Column - Floating beautifully and touching responsively */}
+            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-center items-center gap-4 sm:gap-6 lg:pl-12 w-full">
               
               {/* Special Pill button 1: Nutricionista Comportamental */}
               <button 
                 onClick={() => scrollToSection("comportamental")}
-                className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full border border-[#E6DFD3]/30 hover:border-[#E6DFD3] flex items-center justify-center transition-all duration-500 overflow-hidden bg-[#141312]/40 backdrop-blur-sm"
+                className="group relative w-full max-w-[320px] py-6 rounded-full border border-[#E6DFD3]/30 hover:border-[#E6DFD3] flex items-center justify-center transition-all duration-500 overflow-hidden bg-[#141312]/40 backdrop-blur-sm active:scale-98"
               >
                 <span className="absolute inset-0 bg-[#E6DFD3] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
-                <span className="relative text-xs tracking-[0.2em] font-bold uppercase text-[#E6DFD3] group-hover:text-[#141312] text-center px-6 leading-relaxed z-10 transition-colors duration-500">
+                <span className="relative text-[11px] tracking-[0.2em] font-bold uppercase text-[#E6DFD3] group-hover:text-[#141312] text-center px-6 leading-relaxed z-10 transition-colors duration-500">
                   Nutricionista<br/>Comportamental
                 </span>
               </button>
@@ -259,15 +281,15 @@ export default function Index() {
               {/* Special Pill button 2: Terapeuta Alimentar */}
               <button 
                 onClick={() => scrollToSection("terapeuta")}
-                className="group relative w-full max-w-[320px] aspect-[2.6/1] rounded-full bg-[#E6DFD3] hover:bg-stone-100 text-[#141312] flex items-center justify-center transition-all duration-500 overflow-hidden"
+                className="group relative w-full max-w-[320px] py-6 rounded-full bg-[#E6DFD3] hover:bg-stone-100 text-[#141312] flex items-center justify-center transition-all duration-500 overflow-hidden active:scale-98"
               >
                 <span className="absolute inset-0 bg-white transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
-                <span className="relative text-xs tracking-[0.2em] font-bold uppercase text-center px-6 leading-relaxed z-10">
+                <span className="relative text-[11px] tracking-[0.2em] font-bold uppercase text-center px-6 leading-relaxed z-10">
                   Terapeuta<br/>Alimentar
                 </span>
               </button>
 
-              <div className="pt-6 text-center lg:text-right w-full max-w-[320px]">
+              <div className="pt-4 text-center lg:text-right w-full max-w-[320px]">
                 <span className="text-[10px] tracking-[0.35em] uppercase text-[#E6DFD3]/40 font-semibold">
                   Gabriela Siman • CRN-3
                 </span>
@@ -281,27 +303,27 @@ export default function Index() {
         {/* SECTION 3: NUTRI COMPORTAMENTAL */}
         <section 
           id="comportamental" 
-          className="min-h-screen flex flex-col justify-center py-24 px-6 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative bg-[#1A1917]/30 overflow-hidden"
+          className="min-h-screen flex flex-col justify-center py-16 sm:py-24 px-4 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative bg-[#1A1917]/30 overflow-hidden"
         >
           <div className="absolute top-1/3 left-0 w-[500px] h-[500px] rounded-full bg-stone-900/30 blur-3xl -z-10 pointer-events-none"></div>
 
-          <div className="max-w-7xl mx-auto w-full space-y-16">
+          <div className="max-w-7xl mx-auto w-full space-y-12 sm:space-y-16">
             
             {/* Header Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-              <div className="lg:col-span-7 space-y-4">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+              <div className="lg:col-span-7 space-y-3 sm:space-y-4">
                 <div className="flex items-center gap-3">
                   <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
-                  <span className="text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60">Atendimento Clínico</span>
+                  <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60">Atendimento Clínico</span>
                 </div>
-                <h2 className="font-sans font-black tracking-tighter text-[4.5rem] sm:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
+                <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
                   NUTRI<br/>COMPORTAMENTAL
                 </h2>
               </div>
               
-              {/* Photo Frame matching exactly the deck screenshot aspect ratio */}
+              {/* Photo Frame responsive adjustment */}
               <div className="lg:col-span-5">
-                <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
+                <div className="aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
                   <div className="absolute inset-0 bg-[#141312]/30 group-hover:bg-[#141312]/0 transition-all duration-500 z-10"></div>
                   <img 
                     src="/images/gabi-hero.png" 
@@ -313,15 +335,15 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Content columns matching the layout exactly */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pt-12 border-t border-[#E6DFD3]/15">
+            {/* Content columns optimized for smaller mobile views */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 pt-8 sm:pt-12 border-t border-[#E6DFD3]/15">
               
               {/* Col 1 */}
               <div className="space-y-4">
                 <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
                   Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções e desafios diferentes.
                 </p>
-                <p className="text-[#E6DFD3]/80 text-sm leading-relaxed font-light">
+                <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
                   No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
                 </p>
               </div>
@@ -334,8 +356,8 @@ export default function Index() {
               </div>
 
               {/* Col 3 & CTA */}
-              <div className="space-y-8 flex flex-col justify-between">
-                <p className="text-[#E6DFD3]/80 text-sm leading-relaxed font-light">
+              <div className="space-y-6 sm:space-y-8 flex flex-col justify-between">
+                <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
                   Se você sente que já tentou muitas dietas e quer construir uma relação mais leve com a comida, estou aqui para te ajudar. <span className="text-rose-400">♥</span>
                 </p>
 
@@ -357,27 +379,27 @@ export default function Index() {
         {/* SECTION 4: TERAPEUTA ALIMENTAR */}
         <section 
           id="terapeuta" 
-          className="min-h-screen flex flex-col justify-center py-24 px-6 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative overflow-hidden"
+          className="min-h-screen flex flex-col justify-center py-16 sm:py-24 px-4 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative overflow-hidden"
         >
           <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] rounded-full bg-stone-900/25 blur-3xl -z-10 pointer-events-none"></div>
 
-          <div className="max-w-7xl mx-auto w-full space-y-16">
+          <div className="max-w-7xl mx-auto w-full space-y-12 sm:space-y-16">
             
             {/* Header Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-              <div className="lg:col-span-7 space-y-4">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+              <div className="lg:col-span-7 space-y-3 sm:space-y-4">
                 <div className="flex items-center gap-3">
                   <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
-                  <span className="text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60">Pediatria & Desenvolvimento</span>
+                  <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60">Pediatria & Desenvolvimento</span>
                 </div>
-                <h2 className="font-sans font-black tracking-tighter text-[4.5rem] sm:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
+                <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
                   TERAPEUTA<br/>ALIMENTAR
                 </h2>
               </div>
               
-              {/* Photo Frame matching exactly the deck screenshot aspect ratio */}
+              {/* Photo Frame responsive scale */}
               <div className="lg:col-span-5">
-                <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
+                <div className="aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
                   <div className="absolute inset-0 bg-[#141312]/30 group-hover:bg-[#141312]/0 transition-all duration-500 z-10"></div>
                   <img 
                     src="/images/gabi-hero.png" 
@@ -389,15 +411,15 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Content columns matching the layout exactly */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pt-12 border-t border-[#E6DFD3]/15">
+            {/* Content columns matching the layout with touch spacing */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 pt-8 sm:pt-12 border-t border-[#E6DFD3]/15">
               
               {/* Col 1 */}
               <div className="space-y-4">
                 <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
                   Sou apaixonada pelo cuidado infantil, pelo desenvolvimento humano e pela forma como a alimentação pode transformar relações, emoções e vivências dentro de uma família.
                 </p>
-                <p className="text-[#E6DFD3]/80 text-sm leading-relaxed font-light">
+                <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
                   Acredito em um atendimento leve, acolhedor e individualizado, onde cada criança é respeitada em sua singularidade, no seu tempo e nas suas dificuldades.
                 </p>
               </div>
@@ -410,8 +432,8 @@ export default function Index() {
               </div>
 
               {/* Col 3 & CTA */}
-              <div className="space-y-8 flex flex-col justify-between">
-                <p className="text-[#E6DFD3]/80 text-sm leading-relaxed font-light">
+              <div className="space-y-6 sm:space-y-8 flex flex-col justify-between">
+                <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
                   Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão e com muito respeito.
                 </p>
 
@@ -433,24 +455,24 @@ export default function Index() {
         {/* SECTION 5: MUITO ALÉM DA ALIMENTAÇÃO */}
         <section 
           id="alem" 
-          className="min-h-screen flex flex-col justify-center py-24 px-6 sm:px-12 lg:px-24 relative bg-[#1A1917]/20 overflow-hidden"
+          className="min-h-screen flex flex-col justify-center py-16 sm:py-24 px-4 sm:px-12 lg:px-24 relative bg-[#1A1917]/20 overflow-hidden"
         >
           <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-stone-900/15 blur-3xl -z-10 pointer-events-none"></div>
 
-          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-8 order-2 lg:order-1">
+            <div className="lg:col-span-7 space-y-6 sm:space-y-8 order-2 lg:order-1">
               <div className="flex items-center gap-3">
                 <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
-                <span className="text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60">Filosofia de Trabalho</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60">Filosofia de Trabalho</span>
               </div>
               
-              <h2 className="font-sans font-black tracking-tighter text-[4rem] sm:text-[6rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
+              <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
                 MUITO ALÉM DA ALIMENTAÇÃO
               </h2>
 
-              <div className="max-w-xl space-y-6 text-[#E6DFD3]/85 text-sm sm:text-base font-light leading-relaxed">
+              <div className="max-w-xl space-y-5 sm:space-y-6 text-[#E6DFD3]/85 text-sm sm:text-base font-light leading-relaxed">
                 <p>
                   Meu propósito é ajudar crianças, adultos e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
                 </p>
@@ -462,11 +484,11 @@ export default function Index() {
                 </p>
               </div>
 
-              {/* High-End Direct Contact CTA button with extreme premium fill transition */}
-              <div className="pt-6">
+              {/* Touch Target Optimization with 56px minimum touch-size wrapper */}
+              <div className="pt-4">
                 <button 
                   onClick={() => handleBooking("Muito Além da Alimentação")}
-                  className="group relative overflow-hidden inline-flex items-center gap-3 bg-[#E6DFD3] text-[#141312] font-bold uppercase tracking-[0.2em] text-xs px-10 py-6 rounded-full transition-all duration-500 shadow-[0_20px_45px_-10px_rgba(230,223,211,0.3)] hover:shadow-[0_25px_50px_-5px_rgba(230,223,211,0.45)] hover:-translate-y-1"
+                  className="group w-full sm:w-auto relative overflow-hidden inline-flex items-center justify-center gap-3 bg-[#E6DFD3] text-[#141312] font-bold uppercase tracking-[0.2em] text-xs px-8 py-5 sm:px-10 sm:py-6 rounded-full transition-all duration-500 shadow-[0_20px_45px_-10px_rgba(230,223,211,0.3)] hover:shadow-[0_25px_50px_-5px_rgba(230,223,211,0.45)] hover:-translate-y-1 active:scale-95"
                 >
                   <span className="absolute inset-0 w-full h-full bg-white origin-top transform scale-y-0 transition-transform duration-500 group-hover:scale-y-100 z-0"></span>
                   <span className="relative z-10 flex items-center gap-3">
@@ -478,8 +500,8 @@ export default function Index() {
             </div>
 
             {/* Right Large Photo Frame */}
-            <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center">
-              <div className="w-full max-w-md aspect-[1.78/1] rounded-3xl overflow-hidden border border-[#E6DFD3]/10 bg-[#1A1917] shadow-[0_30px_60px_-10px_rgba(0,0,0,0.85)] relative group cursor-pointer">
+            <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center w-full">
+              <div className="w-full max-w-md aspect-[16/10] sm:aspect-[1.78/1] rounded-3xl overflow-hidden border border-[#E6DFD3]/10 bg-[#1A1917] shadow-[0_30px_60px_-10px_rgba(0,0,0,0.85)] relative group cursor-pointer">
                 <div className="absolute inset-0 bg-[#141312]/20 group-hover:bg-transparent transition-all duration-750 z-10"></div>
                 <img 
                   src="/images/gabi-hero.png" 
@@ -494,53 +516,53 @@ export default function Index() {
 
       </main>
 
-      {/* FOOTER */}
-      <footer className="bg-[#0B0A09] border-t border-[#E6DFD3]/10 text-[#E6DFD3]/60 py-20 relative overflow-hidden">
+      {/* FOOTER - Responsively redesigned */}
+      <footer className="bg-[#0B0A09] border-t border-[#E6DFD3]/10 text-[#E6DFD3]/60 py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#E6DFD3]/10 via-[#E6DFD3]/40 to-[#E6DFD3]/10"></div>
         
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
           
-          <div className="space-y-6">
-            <h3 className="font-serif text-2xl font-bold tracking-[0.2em] text-[#E6DFD3] uppercase">
+          <div className="space-y-4 md:space-y-6 text-center md:text-left">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold tracking-[0.2em] text-[#E6DFD3] uppercase">
               Gabriela Siman
             </h3>
-            <p className="text-xs leading-relaxed max-w-xs font-light text-[#E6DFD3]/70">
+            <p className="text-xs leading-relaxed max-w-xs mx-auto md:mx-0 font-light text-[#E6DFD3]/70">
               Nutricionista comportamental e infantil comprometida em transformar a alimentação em um momento leve, sem culpas e com muito afeto.
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6 text-center md:text-left">
             <h4 className="text-xs uppercase tracking-[0.25em] font-bold text-[#E6DFD3]">Contatos</h4>
-            <ul className="space-y-4 text-xs font-light text-[#E6DFD3]/75">
-              <li className="flex items-center gap-3 hover:text-white transition-colors cursor-pointer">
-                <MapPin className="w-4 h-4 text-[#E6DFD3]/50" />
+            <ul className="space-y-3 sm:space-y-4 text-xs font-light text-[#E6DFD3]/75">
+              <li className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors cursor-pointer">
+                <MapPin className="w-4 h-4 text-[#E6DFD3]/50 shrink-0" />
                 Atendimento Presencial e Online
               </li>
-              <li className="flex items-center gap-3 hover:text-white transition-colors cursor-pointer">
-                <Phone className="w-4 h-4 text-[#E6DFD3]/50" />
+              <li className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors cursor-pointer">
+                <Phone className="w-4 h-4 text-[#E6DFD3]/50 shrink-0" />
                 (11) 99999-9999
               </li>
-              <li className="flex items-center gap-3 hover:text-white transition-colors cursor-pointer">
-                <Mail className="w-4 h-4 text-[#E6DFD3]/50" />
+              <li className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors cursor-pointer">
+                <Mail className="w-4 h-4 text-[#E6DFD3]/50 shrink-0" />
                 contato@gabrielasiman.com
               </li>
             </ul>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6 text-center md:text-left">
             <h4 className="text-xs uppercase tracking-[0.25em] font-bold text-[#E6DFD3]">Registro Profissional</h4>
             <p className="text-xs font-light text-[#E6DFD3]/75 leading-relaxed">
               Gabriela Siman<br />
               CRN-3 / 123456
             </p>
-            <p className="text-[10px] text-[#E6DFD3]/35 pt-4">
+            <p className="text-[10px] text-[#E6DFD3]/35 pt-2 md:pt-4">
               © {new Date().getFullYear()} Gabriela Siman. Todos os direitos reservados.
             </p>
           </div>
 
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 mt-16 pt-10 border-t border-[#E6DFD3]/10 flex flex-col sm:flex-row justify-between items-center gap-6 text-xs font-light text-[#E6DFD3]/40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-[#E6DFD3]/10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-light text-[#E6DFD3]/40 text-center md:text-left">
           <p>Nutrição Ética e Comportamental Baseada em Evidências.</p>
           <MadeWithDyad />
         </div>
