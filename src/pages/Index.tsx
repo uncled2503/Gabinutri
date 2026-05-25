@@ -325,7 +325,7 @@ export default function Index() {
                 <div className="aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
                   <div className="absolute inset-0 bg-[#141312]/30 group-hover:bg-[#141312]/0 transition-all duration-500 z-10"></div>
                   <img 
-                    src="/images/gabi-hero.png" 
+                    src="/images/gabi-comportamental.jpg" 
                     alt="Nutricionista Comportamental" 
                     className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110"
                   />
@@ -473,7 +473,7 @@ export default function Index() {
 
               <div className="max-w-xl space-y-5 sm:space-y-6 text-[#E6DFD3]/85 text-sm sm:text-base font-light leading-relaxed">
                 <p>
-                  Meu propósito é ajudar crianças, adultos e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
+                  Meu propósito é ajudar crianças, adults e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
                 </p>
                 <p>
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
