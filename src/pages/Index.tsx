@@ -7,7 +7,6 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 
 export default function Index() {
   const { toast } = useToast();
-  const [activeSection, setActiveSection] = useState<"quem-sou" | "comportamental" | "terapeuta" | "alem">("quem-sou");
 
   const handleBooking = (type: string) => {
     const message = `Olá Gabriela! Vi seu site e gostaria de agendar uma consulta focada em ${type}.`;
@@ -115,9 +114,18 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right Buttons Container */}
-            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-center items-center gap-6 lg:pl-12">
+            {/* Right Buttons Container with the newly updated Gabi image as background card */}
+            <div className="lg:col-span-5 flex flex-col justify-center items-center gap-6 lg:pl-12">
               
+              {/* Premium presentation of Gabi's cover frame */}
+              <div className="w-full max-w-sm aspect-[1.78/1] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-xl mb-4">
+                <img 
+                  src="/images/gabi-hero.png" 
+                  alt="Gabriela Siman" 
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+
               {/* Pill button 1: Nutricionista Comportamental */}
               <button 
                 onClick={() => scrollToSection("comportamental")}
@@ -141,7 +149,7 @@ export default function Index() {
                 </span>
               </button>
 
-              <div className="hidden lg:block pt-8 self-end text-right">
+              <div className="hidden lg:block pt-4 self-end text-right">
                 <span className="text-[10px] tracking-[0.3em] uppercase text-[#E6DFD3]/30 font-semibold">
                   Nutricionista
                 </span>
@@ -182,7 +190,7 @@ export default function Index() {
                   <img 
                     src="/images/gabi-hero.png" 
                     alt="Nutricionista Comportamental" 
-                    className="w-full h-full object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 </div>
@@ -259,7 +267,7 @@ export default function Index() {
                   <img 
                     src="/images/gabi-hero.png" 
                     alt="Terapeuta Alimentar" 
-                    className="w-full h-full object-cover object-[center_5%] scale-x-[-1] transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 </div>
@@ -337,7 +345,7 @@ export default function Index() {
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
                 </p>
                 <p>
-                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro. <span className="text-amber-300">🌟</span>
+                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possible, leve e seguro. <span className="text-amber-300">🌟</span>
                 </p>
               </div>
 
@@ -359,7 +367,7 @@ export default function Index() {
               {/* Cyan floating dot on the edge of the photo as shown in the screenshot */}
               <div className="absolute left-[-10px] top-2/3 z-20 w-5 h-5 rounded-full bg-[#13C2C2] shadow-lg shadow-[#13C2C2]/50 animate-pulse"></div>
 
-              <div className="w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden border border-[#E6DFD3]/10 bg-[#1A1917] shadow-2xl">
+              <div className="w-full max-w-sm aspect-[1.78/1] rounded-3xl overflow-hidden border border-[#E6DFD3]/10 bg-[#1A1917] shadow-2xl">
                 <img 
                   src="/images/gabi-hero.png" 
                   alt="Gabriela Siman - Muito além da nutrição" 
