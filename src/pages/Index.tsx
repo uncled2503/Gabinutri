@@ -165,58 +165,18 @@ export default function Index() {
         {/* SECTION 1: IMMERSIVE FULL-BLEED HERO COVER BANNER */}
         <section 
           id="hero" 
-          className="relative h-screen w-full flex items-end justify-start overflow-hidden"
+          className="relative h-screen w-full overflow-hidden cursor-pointer"
+          onClick={() => scrollToSection("quem-sou")}
         >
-          {/* Edge-to-edge Cinematic background with advanced overlay */}
+          {/* Edge-to-edge Cinematic background - completely clean to value the background image */}
           <div className="absolute inset-0 z-0">
             <img 
               src="/images/gabi-hero.png" 
               alt="Gabriela Siman Full Bleed Hero Cover" 
-              className="w-full h-full object-cover object-center filter brightness-90 scale-100 animate-pulse duration-[8000ms]"
+              className="w-full h-full object-cover object-center filter brightness-95"
             />
-            {/* Elegant multi-directional dark overlays for text styling & beauty */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#141312] via-[#141312]/40 to-[#141312]/60"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#141312]/90 via-[#141312]/20 to-transparent"></div>
-          </div>
-
-          {/* Hero text & action triggers at the bottom left - highly responsive paddings */}
-          <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-12 lg:px-24 pb-16 sm:pb-20 space-y-5 sm:space-y-6">
-            <div className="space-y-2">
-              <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-[#E6DFD3]/80 font-semibold block">
-                Nutricionista Comportamental e Terapeuta Alimentar
-              </span>
-              <h1 className="font-serif font-bold text-4xl sm:text-7xl lg:text-8xl tracking-tight text-[#E6DFD3]">
-                Gabriela Siman
-              </h1>
-            </div>
-
-            <p className="max-w-xl text-[#E6DFD3]/95 text-xs sm:text-base font-light leading-relaxed">
-              Transformando a relação com a comida em afeto, autonomia, leveza e autocuidado — sem dietas rígidas e com total respeito ao seu bem-estar.
-            </p>
-
-            <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <button 
-                onClick={() => scrollToSection("quem-sou")}
-                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#E6DFD3] text-[#141312] hover:bg-stone-100 font-semibold text-xs uppercase tracking-widest px-6 py-4 rounded-full transition-all duration-300"
-              >
-                Conhecer Minha História 
-                <ChevronDown className="w-4 h-4 animate-bounce" />
-              </button>
-              
-              <button 
-                onClick={() => handleBooking("Contato Geral")}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-[#E6DFD3]/30 hover:border-[#E6DFD3] text-[#E6DFD3] font-semibold text-xs uppercase tracking-widest px-6 py-4 rounded-full transition-all duration-300 backdrop-blur-sm"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Falar no WhatsApp
-              </button>
-            </div>
-          </div>
-
-          {/* Pure Visual Smooth Indicator */}
-          <div className="absolute bottom-8 right-12 hidden lg:flex items-center gap-3 text-[#E6DFD3]/50 animate-pulse">
-            <span className="text-[10px] tracking-[0.25em] uppercase">Rolar para explorar</span>
-            <div className="w-8 h-[1px] bg-current"></div>
+            {/* Soft subtle ambient shadows */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#141312]/30 via-transparent to-[#141312]/20"></div>
           </div>
         </section>
 
