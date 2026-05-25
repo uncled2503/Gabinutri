@@ -413,15 +413,11 @@ export default function Index() {
           id="alem" 
           className="min-h-screen flex flex-col justify-between py-12 md:py-24 px-6 sm:px-12 lg:px-24 relative bg-[#141312] overflow-hidden"
         >
-          {/* Top Line: name on left, slick arrow on right */}
+          {/* Top Line: name on left, line and slick arrow completely removed */}
           <div className="w-full flex items-center justify-between pb-6 md:pb-12 border-b border-[#E6DFD3]/5">
             <span className="text-base sm:text-lg font-sans tracking-[0.05em] text-[#E6DFD3] font-light">
               Gabriela Siman
             </span>
-            <div className="flex items-center gap-3 text-[#E6DFD3]/90">
-              <span className="w-16 sm:w-24 h-[1px] bg-[#E6DFD3]/70"></span>
-              <ChevronRight className="w-5 h-5 -ml-2" />
-            </div>
           </div>
 
           {/* Grid Layout conforming to reference */}
