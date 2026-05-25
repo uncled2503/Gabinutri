@@ -266,23 +266,25 @@ export default function Index() {
         >
           <div className="absolute top-1/3 left-0 w-[500px] h-[500px] rounded-full bg-stone-900/30 blur-3xl -z-10 pointer-events-none"></div>
 
-          <div className="max-w-7xl mx-auto w-full space-y-12 sm:space-y-16">
+          <div className="max-w-7xl mx-auto w-full space-y-8 sm:space-y-12">
             
-            {/* Header Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-              <div className="lg:col-span-7 space-y-3 sm:space-y-4">
-                <div className="flex items-center gap-3">
-                  <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
-                  <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60">Atendimento Clínico</span>
-                </div>
-                <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
-                  NUTRI<br/>COMPORTAMENTAL
-                </h2>
+            {/* Header Layout - Clean full-width to prevent overlaps */}
+            <div className="space-y-3 sm:space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60 font-semibold">Atendimento Clínico</span>
               </div>
+              <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
+                NUTRI COMPORTAMENTAL
+              </h2>
+            </div>
+
+            {/* Content Layout - Structured beautifully below the headline */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-8 sm:pt-12 border-t border-[#E6DFD3]/15">
               
-              {/* Photo Frame responsive adjustment */}
+              {/* Left Column: Premium styled Image */}
               <div className="lg:col-span-5">
-                <div className="aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
+                <div className="aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
                   <div className="absolute inset-0 bg-[#141312]/30 group-hover:bg-[#141312]/0 transition-all duration-500 z-10"></div>
                   <img 
                     src="/images/gabi-comportamental.jpg" 
@@ -292,41 +294,36 @@ export default function Index() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
                 </div>
               </div>
-            </div>
 
-            {/* Content columns optimized for smaller mobile views */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 pt-8 sm:pt-12 border-t border-[#E6DFD3]/15">
-              
-              {/* Col 1 */}
-              <div className="space-y-4">
-                <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
-                  Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções e desafios diferentes.
-                </p>
-                <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                  No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
-                </p>
-              </div>
+              {/* Right Column: Descriptions & Action CTA */}
+              <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                <div className="space-y-4">
+                  <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
+                    Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções e desafios diferentes.
+                  </p>
+                  <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
+                    No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
+                  </p>
+                </div>
 
-              {/* Col 2 */}
-              <div className="space-y-4">
-                <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
-                  A partir disso, construímos juntos um caminho mais possível e gentil com você, com orientação nutricional, plano alimentar quando necessário e ferramentas da nutrição comportamental para tornar sua relação com a comida mais leve e consciente.
-                </p>
-              </div>
+                <div className="space-y-6 flex flex-col justify-between h-full">
+                  <div className="space-y-4">
+                    <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
+                      A partir disso, construímos juntos um caminho mais possível e gentil com você, com orientação nutricional, plano alimentar quando necessário e ferramentas da nutrição comportamental para tornar sua relação com a comida mais leve e consciente.
+                    </p>
+                    <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
+                      Se você sente que já tentou muitas dietas e quer construir uma relação mais leve com a comida, estou aqui para te ajudar. <span className="text-rose-400">♥</span>
+                    </p>
+                  </div>
 
-              {/* Col 3 & CTA */}
-              <div className="space-y-6 sm:space-y-8 flex flex-col justify-between">
-                <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                  Se você sente que já tentou muitas dietas e quer construir uma relação mais leve com a comida, estou aqui para te ajudar. <span className="text-rose-400">♥</span>
-                </p>
-
-                <button 
-                  onClick={() => handleBooking("Nutrição Comportamental")}
-                  className="inline-flex items-center gap-3 text-xs font-bold tracking-[0.25em] uppercase text-[#E6DFD3] hover:text-white transition-all duration-300 group border-b border-[#E6DFD3]/30 pb-2 w-fit"
-                >
-                  <span>Agende sua consulta</span> 
-                  <span className="transition-transform duration-500 group-hover:translate-x-2">🌟</span>
-                </button>
+                  <button 
+                    onClick={() => handleBooking("Nutrição Comportamental")}
+                    className="inline-flex items-center gap-3 text-xs font-bold tracking-[0.25em] uppercase text-[#E6DFD3] hover:text-white transition-all duration-300 group border-b border-[#E6DFD3]/30 pb-2 w-fit pt-4"
+                  >
+                    <span>Agende sua consulta</span> 
+                    <span className="transition-transform duration-500 group-hover:translate-x-2">🌟</span>
+                  </button>
+                </div>
               </div>
 
             </div>
@@ -342,23 +339,25 @@ export default function Index() {
         >
           <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] rounded-full bg-stone-900/25 blur-3xl -z-10 pointer-events-none"></div>
 
-          <div className="max-w-7xl mx-auto w-full space-y-12 sm:space-y-16">
+          <div className="max-w-7xl mx-auto w-full space-y-8 sm:space-y-12">
             
-            {/* Header Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-              <div className="lg:col-span-7 space-y-3 sm:space-y-4">
-                <div className="flex items-center gap-3">
-                  <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
-                  <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60">Pediatria & Desenvolvimento</span>
-                </div>
-                <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
-                  TERAPEUTA<br/>ALIMENTAR
-                </h2>
+            {/* Header Layout - Clean full-width to prevent overlaps */}
+            <div className="space-y-3 sm:space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60 font-semibold">Pediatria & Desenvolvimento</span>
               </div>
+              <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
+                TERAPEUTA ALIMENTAR
+              </h2>
+            </div>
+
+            {/* Content Layout - Structured beautifully below the headline */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-8 sm:pt-12 border-t border-[#E6DFD3]/15">
               
-              {/* Photo Frame responsive scale */}
+              {/* Left Column: Premium styled Image */}
               <div className="lg:col-span-5">
-                <div className="aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
+                <div className="aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
                   <div className="absolute inset-0 bg-[#141312]/30 group-hover:bg-[#141312]/0 transition-all duration-500 z-10"></div>
                   <img 
                     src="/images/gabi-terapeuta.jpg" 
@@ -368,41 +367,36 @@ export default function Index() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
                 </div>
               </div>
-            </div>
 
-            {/* Content columns matching the layout with touch spacing */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 pt-8 sm:pt-12 border-t border-[#E6DFD3]/15">
-              
-              {/* Col 1 */}
-              <div className="space-y-4">
-                <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
-                  Sou apaixonada pelo cuidado infantil, pelo desenvolvimento humano e pela forma como a alimentação pode transformar relações, emoções e vivências dentro de uma família.
-                </p>
-                <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                  Acredito em um atendimento leve, acolhedor e individualizado, onde cada criança é respeitada em sua singularidade, no seu tempo e nas suas dificuldades.
-                </p>
-              </div>
+              {/* Right Column: Descriptions & Action CTA */}
+              <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                <div className="space-y-4">
+                  <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
+                    Sou apaixonada pelo cuidado infantil, pelo desenvolvimento humano e pela forma como a alimentação pode transformar relações, emoções e vivências dentro de uma família.
+                  </p>
+                  <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
+                    Acredito em um atendimento leve, acolhedor e individualizado, onde cada criança é respeitada em sua singularidade, no seu tempo e nas suas dificuldades.
+                  </p>
+                </div>
 
-              {/* Col 2 */}
-              <div className="space-y-4">
-                <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
-                  Minha trajetória profissional me aproximou não apenas da nutrição comportamental, mas também do universo do neurodesenvolvimento infantil, despertando ainda mais meu interesse por seletividade alimentar, flexibilidade alimentar e autonomia nas refeições.
-                </p>
-              </div>
+                <div className="space-y-6 flex flex-col justify-between h-full">
+                  <div className="space-y-4">
+                    <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
+                      Minha trajetória profissional me aproximou não apenas da nutrição comportamental, mas também do universo do neurodesenvolvimento infantil, despertando ainda mais meu interesse por seletividade alimentar, flexibilidade alimentar e autonomia nas refeições.
+                    </p>
+                    <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
+                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão e com muito respeito.
+                    </p>
+                  </div>
 
-              {/* Col 3 & CTA */}
-              <div className="space-y-6 sm:space-y-8 flex flex-col justify-between">
-                <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                  Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão e com muito respeito.
-                </p>
-
-                <button 
-                  onClick={() => handleBooking("Terapia Alimentar")}
-                  className="inline-flex items-center gap-3 text-xs font-bold tracking-[0.25em] uppercase text-[#E6DFD3] hover:text-white transition-all duration-300 group border-b border-[#E6DFD3]/30 pb-2 w-fit"
-                >
-                  <span>Agende sua consulta</span> 
-                  <span className="transition-transform duration-500 group-hover:translate-x-2">🌟</span>
-                </button>
+                  <button 
+                    onClick={() => handleBooking("Terapia Alimentar")}
+                    className="inline-flex items-center gap-3 text-xs font-bold tracking-[0.25em] uppercase text-[#E6DFD3] hover:text-white transition-all duration-300 group border-b border-[#E6DFD3]/30 pb-2 w-fit pt-4"
+                  >
+                    <span>Agende sua consulta</span> 
+                    <span className="transition-transform duration-500 group-hover:translate-x-2">🌟</span>
+                  </button>
+                </div>
               </div>
 
             </div>
@@ -447,7 +441,7 @@ export default function Index() {
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
                 </p>
                 <p>
-                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
+                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação in algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
                 </p>
               </div>
             </div>
