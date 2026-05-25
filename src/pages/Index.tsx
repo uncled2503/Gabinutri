@@ -414,65 +414,51 @@ export default function Index() {
         {/* SECTION 5: MUITO ALÉM DA ALIMENTAÇÃO - DESIGN EXCLUSIVO DE CAPA COM CORTE */}
         <section 
           id="alem" 
-          className="min-h-screen flex flex-col justify-end py-12 md:py-20 px-6 sm:px-12 lg:px-24 relative bg-[#0F0E0D] overflow-hidden"
+          className="min-h-screen flex flex-col justify-between py-12 md:py-24 px-6 sm:px-12 lg:px-24 relative bg-[#141312] overflow-hidden"
         >
-          {/* Linha/Seta de Transição de Alta Classe no canto superior direito */}
-          <div className="absolute top-10 md:top-16 right-8 md:right-16 hidden sm:flex items-center gap-4 text-[#E6DFD3]/80 group cursor-pointer" onClick={() => handleBooking("Muito Além da Alimentação")}>
-            <span className="w-16 h-[1.5px] bg-[#E6DFD3]/80 transition-all duration-500 group-hover:w-24"></span>
-            <ChevronRight className="w-6 h-6 -ml-2 transition-transform duration-500 group-hover:translate-x-2" />
+          {/* Top Line: name on left, slick arrow on right */}
+          <div className="w-full flex items-center justify-between pb-6 md:pb-12 border-b border-[#E6DFD3]/5">
+            <span className="text-base sm:text-lg font-sans tracking-[0.05em] text-[#E6DFD3] font-light">
+              Gabriela Siman
+            </span>
+            <div className="flex items-center gap-3 text-[#E6DFD3]/90">
+              <span className="w-16 sm:w-24 h-[1px] bg-[#E6DFD3]/70"></span>
+              <ChevronRight className="w-5 h-5 -ml-2" />
+            </div>
           </div>
 
-          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end relative z-10">
+          {/* Grid Layout conforming to reference */}
+          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end relative z-10 pt-10">
             
-            {/* Bloco Esquerdo de Texto do Layout de Capa */}
-            <div className="lg:col-span-6 space-y-6 md:space-y-12 text-left pb-4 lg:pb-12">
+            {/* Left Content Column */}
+            <div className="lg:col-span-6 space-y-6 md:space-y-12 text-left pb-4 lg:pb-16">
               
-              {/* Header de Assinatura Curta */}
-              <div className="space-y-2">
-                <span className="text-sm font-sans tracking-[0.18em] text-[#E6DFD3] block font-medium">
-                  Gabriela Siman
-                </span>
-                <div className="w-4 h-4 rounded-full bg-[#00A896] mt-1.5 shadow-[0_0_10px_rgba(0,168,150,0.6)]"></div>
-              </div>
-              
-              {/* Heading Gigante Condensado */}
-              <h2 className="font-sans font-black tracking-tight text-5xl sm:text-7xl lg:text-[5.5rem] leading-[0.9] text-[#E6DFD3] uppercase select-none">
+              {/* Massive Condensed Heading styled exactly like image */}
+              <h2 className="font-sans font-black tracking-tighter text-[2.75rem] sm:text-[4.75rem] lg:text-[5.5rem] leading-[0.9] text-[#E6DFD3] uppercase select-none">
                 MUITO ALÉM DA<br/>ALIMENTAÇÃO
               </h2>
 
-              {/* Descrição em Prosa de Alta Qualidade */}
-              <div className="max-w-xl space-y-4 text-[#E6DFD3]/80 text-sm md:text-base font-light leading-relaxed">
+              {/* Exact Description matching screenshot */}
+              <div className="max-w-xl space-y-5 text-[#E6DFD3]/85 text-sm sm:text-base md:text-lg font-light leading-relaxed">
                 <p>
                   Meu propósito é ajudar crianças, adultos e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
                 </p>
                 <p>
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
                 </p>
-                <p className="flex items-center gap-2">
-                  <span>Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro.</span>
-                  <span className="text-amber-400 font-bold shrink-0">★</span>
+                <p>
+                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
                 </p>
-              </div>
-
-              {/* Botão de Contato Otimizado */}
-              <div className="pt-2">
-                <button 
-                  onClick={() => handleBooking("Muito Além da Alimentação")}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#E6DFD3] text-[#141312] font-bold uppercase tracking-[0.2em] text-[11px] px-8 py-4.5 rounded-full transition-all duration-300 hover:bg-stone-100 hover:shadow-[0_15px_30px_rgba(230,223,211,0.2)] active:scale-95"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  Entrar em contato agora
-                </button>
               </div>
             </div>
 
-            {/* Bloco Direito com o Recorte Moderno da Foto */}
-            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[450px] sm:h-[600px] lg:h-[700px]">
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F0E0D] via-transparent to-transparent z-10 pointer-events-none"></div>
+            {/* Right Column: overlapping portrait cutout with cushion pillow */}
+            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[450px] sm:h-[600px] lg:h-[680px]">
+              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#141312] via-transparent to-transparent z-10 pointer-events-none"></div>
               <img 
                 src="/images/gabi-cutout.png" 
                 alt="Gabriela Siman Cutout Portrait" 
-                className="w-full h-full object-contain object-bottom select-none pointer-events-none filter brightness-[0.98] drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] transform translate-y-2"
+                className="w-full h-full object-contain object-bottom select-none pointer-events-none filter brightness-[0.98] transform translate-y-4"
               />
             </div>
 
