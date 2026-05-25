@@ -178,8 +178,8 @@ export default function Index() {
             {/* Soft top gradient to keep text readable */}
             <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#141312]/65 to-transparent z-10 pointer-events-none"></div>
             
-            {/* Ultra Smooth, Deep and Elegant Bottom Gradient transition overlay */}
-            <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[#141312] via-[#141312]/80 to-transparent z-10 pointer-events-none"></div>
+            {/* Soft, Subtle and elegant base gradient overlay (smaller height to not overshadow lower elements of the photo) */}
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#141312] to-transparent z-10 pointer-events-none"></div>
           </div>
         </section>
 
@@ -305,7 +305,7 @@ export default function Index() {
                     Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções e desafios diferentes.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                    No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
+                    No meu trabalho, busco olhar para tudo isso com cuidado and escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
                   </p>
                 </div>
 
