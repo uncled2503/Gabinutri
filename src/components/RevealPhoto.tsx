@@ -25,11 +25,14 @@ export default function RevealPhoto({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsIntersecting(true);
+        } else {
+          // Permite que volte ao estado oculto caso o usuário suba a página novamente (opcional para efeito contínuo)
+          setIsIntersecting(false);
         }
       },
       {
-        threshold: 0.15,
-        rootMargin: "0px 0px -100px 0px", // Transição de clareamento suave na rolagem
+        threshold: 0.1,
+        rootMargin: "0px 0px -120px 0px", // Ativa um pouco antes da foto estar inteira na tela
       }
     );
 
@@ -45,28 +48,28 @@ export default function RevealPhoto({
   return (
     <div
       ref={ref}
-      className={`relative overflow-hidden rounded-2xl border border-[#E6DFD3]/10 bg-stone-900/40 shadow-[0_20px_50px_rgba(0,0,0,0.8)] group cursor-pointer ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-[#E6DFD3]/10 bg-[#141312] shadow-[0_20px_50px_rgba(0,0,0,0.8)] group cursor-pointer ${className}`}
     >
-      {/* Camada escura que desaparece completamente conforme scrollamos */}
+      {/* Camada escura que clareia de forma extremamente suave e premium */}
       <div
         className={`absolute inset-0 bg-[#141312] transition-opacity duration-1000 ease-out z-10 pointer-events-none ${
-          isIntersecting ? "opacity-0" : "opacity-45"
+          isIntersecting ? "opacity-0" : "opacity-60"
         } ${overlayClassName}`}
       />
       
-      {/* Imagem que transiciona de fosca/dessaturada para super brilhante, focada e clara */}
+      {/* Imagem transita de preto e branco, escura e desfocada para 100% colorida, nítida e iluminada */}
       <img
         src={src}
         alt={alt}
-        className={`w-full h-auto object-contain transition-all duration-1200 ease-out ${
+        className={`w-full h-auto object-contain transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) ${
           isIntersecting
-            ? "brightness-105 saturate-100 filter-none scale-100"
-            : "brightness-75 saturate-[0.5] blur-[1.5px] scale-[1.03]"
+            ? "brightness-105 saturate-100 blur-0 scale-100 grayscale-0"
+            : "brightness-[0.4] saturate-[0.1] grayscale blur-[4px] scale-[1.04]"
         } ${imgClassName}`}
       />
       
       {/* Gradiente sutil na base */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-15 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-15 pointer-events-none"></div>
     </div>
   );
 }
