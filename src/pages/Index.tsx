@@ -302,7 +302,7 @@ export default function Index() {
               <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
                 <div className="space-y-4">
                   <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
-                    Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções e desafios diferentes.
+                    Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções and desafios diferentes.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
                     No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
@@ -388,7 +388,7 @@ export default function Index() {
                       Minha trajetória profissional me aproximou não apenas da nutrição comportamental, mas também do universo do neurodesenvolvimento infantil, despertando ainda mais meu interesse por seletividade alimentar, flexibilidade alimentar e autonomia nas refeições.
                     </p>
                     <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão and com muito respeito.
+                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão e com muito respeito.
                     </p>
                   </div>
 
@@ -434,7 +434,7 @@ export default function Index() {
               {/* Exact Description matching screenshot */}
               <div className="max-w-xl space-y-4 text-[#E6DFD3]/85 text-sm sm:text-base md:text-lg font-light leading-relaxed">
                 <p>
-                  Meu propósito é ajudar crianças, adults e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
+                  Meu propósito é ajudar crianças, adultos e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
                 </p>
                 <p>
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
@@ -450,7 +450,7 @@ export default function Index() {
               <img 
                 src="/images/gabi-cutout.png" 
                 alt="Gabriela Siman Cutout Portrait" 
-                className="w-full h-full object-right-bottom lg:object-bottom select-none pointer-events-none filter brightness-[0.98] scale-[1.28] origin-bottom-right lg:origin-bottom z-10"
+                className="w-full h-full object-cover object-right-bottom lg:object-bottom select-none pointer-events-none filter brightness-[0.98] scale-[1.28] origin-bottom-right lg:origin-bottom z-10"
               />
               {/* Gradient layer seamlessly transitioning into the footer background color (#0B0A09) */}
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0B0A09] via-[#141312]/85 to-transparent z-20 pointer-events-none"></div>
