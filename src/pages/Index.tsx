@@ -196,17 +196,17 @@ export default function Index() {
         >
           {/* Edge-to-edge Cinematic background */}
           <div className="absolute inset-0 z-0 flex items-center justify-center">
-            {/* Desktop Hero Image - optimized to align top to prevent head cutting on wide monitors */}
+            {/* Desktop Hero Image - resized to fit the screen size perfectly without cutting off her head or body */}
             <img 
               src="/images/gabi-hero.png" 
-              alt="Gabriela Siman Full Bleed Hero Cover" 
-              className="hidden md:block w-full h-full object-cover object-top filter brightness-100"
+              alt="Gabriela Siman Hero Cover" 
+              className="hidden md:block w-full h-full object-contain filter brightness-100"
             />
-            {/* Mobile Hero Image - restored to full object-cover and alignment to fill mobile screens gracefully */}
+            {/* Mobile Hero Image - resized to fit mobile view screens gracefully */}
             <img 
               src="/images/gabi-hero-mobile.png" 
-              alt="Gabriela Siman Full Bleed Hero Cover Mobile" 
-              className="block md:hidden w-full h-full object-cover object-top filter brightness-105"
+              alt="Gabriela Siman Hero Cover Mobile" 
+              className="block md:hidden w-full h-full object-contain filter brightness-105"
             />
             {/* Soft top gradient to keep text readable */}
             <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#141312]/65 to-transparent z-10 pointer-events-none"></div>
@@ -348,7 +348,7 @@ export default function Index() {
                     Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções e desafios diferentes.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                    No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
+                    No meu trabalho, busco olhar para tudo isso com cuidado and escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
                   </p>
                 </ScrollReveal>
 
