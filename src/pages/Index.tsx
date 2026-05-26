@@ -453,7 +453,7 @@ export default function Index() {
                 className="w-full h-full object-contain object-right-bottom select-none pointer-events-none filter brightness-[0.98] scale-[1.48] md:scale-110 origin-bottom-right z-10"
               />
               {/* Gradient layer seamlessly transitioning into the footer background color (#0B0A09) */}
-              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0B0A09] via-[#141312]/85 to-transparent z-20 pointer-events-none"></div>
+              <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#0B0A09] via-[#0B0A09]/80 to-transparent z-20 pointer-events-none"></div>
             </div>
 
           </div>
@@ -462,7 +462,7 @@ export default function Index() {
       </main>
 
       {/* FOOTER - Responsively redesigned */}
-      <footer className="bg-[#0B0A09] border-t border-[#E6DFD3]/10 text-[#E6DFD3]/60 py-16 sm:py-20 relative overflow-hidden z-10">
+      <footer className="bg-[#0B0A09] text-[#E6DFD3]/60 py-16 sm:py-20 relative overflow-hidden z-10">
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#E6DFD3]/10 via-[#E6DFD3]/40 to-[#E6DFD3]/10"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
