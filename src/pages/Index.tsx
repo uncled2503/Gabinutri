@@ -177,22 +177,22 @@ export default function Index() {
         {/* SECTION 1: IMMERSIVE FULL-BLEED HERO COVER BANNER */}
         <section 
           id="hero" 
-          className="relative h-screen w-full overflow-hidden cursor-pointer"
+          className="relative h-screen w-full overflow-hidden cursor-pointer bg-[#141312]"
           onClick={() => scrollToSection("quem-sou")}
         >
           {/* Edge-to-edge Cinematic background */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 flex items-center justify-center">
             {/* Desktop Hero Image - optimized to align top to prevent head cutting on wide monitors */}
             <img 
               src="/images/gabi-hero.png" 
               alt="Gabriela Siman Full Bleed Hero Cover" 
               className="hidden md:block w-full h-full object-cover object-top filter brightness-100"
             />
-            {/* Mobile Hero Image - optimized layout */}
+            {/* Mobile Hero Image - optimized with contain to preserve the whole framing and blend into the background */}
             <img 
               src="/images/gabi-hero-mobile.png" 
               alt="Gabriela Siman Full Bleed Hero Cover Mobile" 
-              className="block md:hidden w-full h-full object-cover object-top filter brightness-100"
+              className="block md:hidden w-full h-full object-contain object-top pt-12 filter brightness-105"
             />
             {/* Soft top gradient to keep text readable */}
             <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#141312]/65 to-transparent z-10 pointer-events-none"></div>
@@ -473,7 +473,7 @@ export default function Index() {
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
                 </p>
                 <p>
-                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
+                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação in algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
                 </p>
               </ScrollReveal>
             </div>
