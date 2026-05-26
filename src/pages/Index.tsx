@@ -3,14 +3,17 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Sparkles, MessageCircle, Heart, Star, MapPin, Phone, Mail, ChevronRight, Menu, X, ChevronDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ScrollReveal from "@/components/ScrollReveal";
+import RevealPhoto from "@/components/RevealPhoto";
 
 export default function Index() {
   const { toast } = useToast();
   const [activeSection, setActiveSection] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [cutoutVisible, setCutoutVisible] = useState(false);
 
-  // Monitor scroll for header active states & premium navbar behavior
+  // Monitor scroll for header active states, premium navbar behavior and cutout reveal
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -26,6 +29,15 @@ export default function Index() {
           if (scrollPosition >= top && scrollPosition < top + height) {
             setActiveSection(section);
           }
+        }
+      }
+
+      // Check for cutout visibility in section 5
+      const alemSection = document.getElementById("alem");
+      if (alemSection) {
+        const rect = alemSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+          setCutoutVisible(true);
         }
       }
     };
@@ -174,13 +186,13 @@ export default function Index() {
             <img 
               src="/images/gabi-hero.png" 
               alt="Gabriela Siman Full Bleed Hero Cover" 
-              className="hidden md:block w-full h-full object-cover object-top filter brightness-95"
+              className="hidden md:block w-full h-full object-cover object-top filter brightness-100"
             />
             {/* Mobile Hero Image - optimized layout */}
             <img 
               src="/images/gabi-hero-mobile.png" 
               alt="Gabriela Siman Full Bleed Hero Cover Mobile" 
-              className="block md:hidden w-full h-full object-cover object-top filter brightness-95"
+              className="block md:hidden w-full h-full object-cover object-top filter brightness-100"
             />
             {/* Soft top gradient to keep text readable */}
             <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#141312]/65 to-transparent z-10 pointer-events-none"></div>
@@ -203,18 +215,22 @@ export default function Index() {
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-              <div className="flex items-center gap-3">
-                <span className="w-8 h-[1px] bg-[#E6DFD3]/40"></span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#E6DFD3]/70 font-semibold">
-                  Atrás do Jaleco
-                </span>
-              </div>
+              <ScrollReveal delay={100}>
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-[1px] bg-[#E6DFD3]/40"></span>
+                  <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#E6DFD3]/70 font-semibold">
+                    Atrás do Jaleco
+                  </span>
+                </div>
+              </ScrollReveal>
               
-              <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6rem] leading-none text-[#E6DFD3] uppercase">
-                QUEM SOU EU?
-              </h2>
+              <ScrollReveal delay={200}>
+                <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6rem] leading-none text-[#E6DFD3] uppercase">
+                  QUEM SOU EU?
+                </h2>
+              </ScrollReveal>
 
-              <div className="max-w-xl space-y-5 sm:space-y-6 text-[#E6DFD3]/90 text-sm sm:text-base font-light leading-relaxed">
+              <ScrollReveal delay={300} className="max-w-xl space-y-5 sm:space-y-6 text-[#E6DFD3]/90 text-sm sm:text-base font-light leading-relaxed">
                 <p className="font-semibold text-white text-lg sm:text-xl">
                   Prazer, eu sou a Gabriela.
                 </p>
@@ -230,39 +246,43 @@ export default function Index() {
                 <p className="italic text-[#E6DFD3]/70 pt-4 border-t border-[#E6DFD3]/20">
                   Agora, vem conhecer um pouquinho do meu lado profissional e especialidades.
                 </p>
-              </div>
+              </ScrollReveal>
             </div>
 
             {/* Right Buttons & CTA Column */}
             <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-center items-center gap-4 sm:gap-6 lg:pl-12 w-full">
               
               {/* Special Pill button 1: Nutricionista Comportamental */}
-              <button 
-                onClick={() => scrollToSection("comportamental")}
-                className="group relative w-full max-w-[320px] py-6 rounded-full border border-[#E6DFD3]/30 hover:border-[#E6DFD3] flex items-center justify-center transition-all duration-500 overflow-hidden bg-[#141312]/40 backdrop-blur-sm active:scale-98"
-              >
-                <span className="absolute inset-0 bg-[#E6DFD3] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
-                <span className="relative text-[11px] tracking-[0.2em] font-bold uppercase text-[#E6DFD3] group-hover:text-[#141312] text-center px-6 leading-relaxed z-10 transition-colors duration-500">
-                  Nutricionista<br/>Comportamental
-                </span>
-              </button>
+              <ScrollReveal delay={250} className="w-full max-w-[320px]">
+                <button 
+                  onClick={() => scrollToSection("comportamental")}
+                  className="group relative w-full py-6 rounded-full border border-[#E6DFD3]/30 hover:border-[#E6DFD3] flex items-center justify-center transition-all duration-500 overflow-hidden bg-[#141312]/40 backdrop-blur-sm active:scale-98"
+                >
+                  <span className="absolute inset-0 bg-[#E6DFD3] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
+                  <span className="relative text-[11px] tracking-[0.2em] font-bold uppercase text-[#E6DFD3] group-hover:text-[#141312] text-center px-6 leading-relaxed z-10 transition-colors duration-500">
+                    Nutricionista<br/>Comportamental
+                  </span>
+                </button>
+              </ScrollReveal>
 
               {/* Special Pill button 2: Terapeuta Alimentar */}
-              <button 
-                onClick={() => scrollToSection("terapeuta")}
-                className="group relative w-full max-w-[320px] py-6 rounded-full bg-[#E6DFD3] hover:bg-stone-100 text-[#141312] flex items-center justify-center transition-all duration-500 overflow-hidden active:scale-98"
-              >
-                <span className="absolute inset-0 bg-white transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
-                <span className="relative text-[11px] tracking-[0.2em] font-bold uppercase text-center px-6 leading-relaxed z-10">
-                  Terapeuta<br/>Alimentar
-                </span>
-              </button>
+              <ScrollReveal delay={350} className="w-full max-w-[320px]">
+                <button 
+                  onClick={() => scrollToSection("terapeuta")}
+                  className="group relative w-full py-6 rounded-full bg-[#E6DFD3] hover:bg-stone-100 text-[#141312] flex items-center justify-center transition-all duration-500 overflow-hidden active:scale-98"
+                >
+                  <span className="absolute inset-0 bg-white transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-0"></span>
+                  <span className="relative text-[11px] tracking-[0.2em] font-bold uppercase text-center px-6 leading-relaxed z-10">
+                    Terapeuta<br/>Alimentar
+                  </span>
+                </button>
+              </ScrollReveal>
 
-              <div className="pt-4 text-center lg:text-right w-full max-w-[320px]">
+              <ScrollReveal delay={450} className="pt-4 text-center lg:text-right w-full max-w-[320px]">
                 <span className="text-[10px] tracking-[0.35em] uppercase text-[#E6DFD3]/40 font-semibold">
                   Gabriela Siman • CRN-3
                 </span>
-              </div>
+              </ScrollReveal>
             </div>
 
           </div>
@@ -280,13 +300,18 @@ export default function Index() {
             
             {/* Header Layout - Clean full-width to prevent overlaps */}
             <div className="space-y-3 sm:space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60 font-semibold">Atendimento Clínico</span>
-              </div>
-              <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
-                NUTRI COMPORTAMENTAL
-              </h2>
+              <ScrollReveal delay={100}>
+                <div className="flex items-center gap-3">
+                  <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
+                  <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60 font-semibold">Atendimento Clínico</span>
+                </div>
+              </ScrollReveal>
+              
+              <ScrollReveal delay={200}>
+                <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
+                  NUTRI COMPORTAMENTAL
+                </h2>
+              </ScrollReveal>
             </div>
 
             {/* Content Layout - Structured beautifully below the headline */}
@@ -294,29 +319,26 @@ export default function Index() {
               
               {/* Left Column: Premium styled Image with full auto height rendering */}
               <div className="lg:col-span-5">
-                <div className="rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
-                  <div className="absolute inset-0 bg-[#141312]/30 group-hover:bg-[#141312]/0 transition-all duration-500 z-10"></div>
-                  <img 
+                <ScrollReveal delay={300} animation="scale-up">
+                  <RevealPhoto 
                     src="/images/gabi-comportamental.jpg" 
                     alt="Nutricionista Comportamental" 
-                    className="w-full h-auto object-contain transition-transform duration-1000 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10 pointer-events-none"></div>
-                </div>
+                </ScrollReveal>
               </div>
 
               {/* Right Column: Descriptions & Action CTA */}
               <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-                <div className="space-y-4">
+                <ScrollReveal delay={400} className="space-y-4">
                   <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
                     Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções e desafios diferentes.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
                     No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
                   </p>
-                </div>
+                </ScrollReveal>
 
-                <div className="space-y-6 flex flex-col justify-between h-full">
+                <ScrollReveal delay={500} className="space-y-6 flex flex-col justify-between h-full">
                   <div className="space-y-4">
                     <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
                       A partir disso, construímos juntos um caminho mais possível e gentil com você, com orientação nutricional, plano alimentar quando necessário e ferramentas da nutrição comportamental para tornar sua relação com a comida mais leve e consciente.
@@ -333,7 +355,7 @@ export default function Index() {
                     <span>Agende sua consulta</span> 
                     <span className="transition-transform duration-500 group-hover:translate-x-2">🌟</span>
                   </button>
-                </div>
+                </ScrollReveal>
               </div>
 
             </div>
@@ -353,13 +375,18 @@ export default function Index() {
             
             {/* Header Layout - Clean full-width to prevent overlaps */}
             <div className="space-y-3 sm:space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60 font-semibold">Pediatria & Desenvolvimento</span>
-              </div>
-              <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
-                TERAPEUTA ALIMENTAR
-              </h2>
+              <ScrollReveal delay={100}>
+                <div className="flex items-center gap-3">
+                  <span className="w-6 h-[1px] bg-[#E6DFD3]/40"></span>
+                  <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E6DFD3]/60 font-semibold">Pediatria & Desenvolvimento</span>
+                </div>
+              </ScrollReveal>
+              
+              <ScrollReveal delay={200}>
+                <h2 className="font-sans font-black tracking-tighter text-4xl sm:text-7xl lg:text-[6.5rem] leading-none text-[#E6DFD3] uppercase transition-all duration-500">
+                  TERAPEUTA ALIMENTAR
+                </h2>
+              </ScrollReveal>
             </div>
 
             {/* Content Layout - Structured beautifully below the headline */}
@@ -367,29 +394,26 @@ export default function Index() {
               
               {/* Left Column: Premium styled Image with full auto height rendering */}
               <div className="lg:col-span-5">
-                <div className="rounded-2xl overflow-hidden border border-[#E6DFD3]/10 bg-stone-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer">
-                  <div className="absolute inset-0 bg-[#141312]/30 group-hover:bg-[#141312]/0 transition-all duration-500 z-10"></div>
-                  <img 
+                <ScrollReveal delay={300} animation="scale-up">
+                  <RevealPhoto 
                     src="/images/gabi-terapeuta.jpg" 
                     alt="Terapeuta Alimentar" 
-                    className="w-full h-auto object-contain transition-transform duration-1000 group-hover:scale-105 filter brightness-[0.95]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10 pointer-events-none"></div>
-                </div>
+                </ScrollReveal>
               </div>
 
               {/* Right Column: Descriptions & Action CTA */}
               <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-                <div className="space-y-4">
+                <ScrollReveal delay={400} className="space-y-4">
                   <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
                     Sou apaixonada pelo cuidado infantil, pelo desenvolvimento humano e pela forma como a alimentação pode transformar relações, emoções e vivências dentro de uma família.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                    Acredito em um atendimento leve, acolhedor e individualizado, onde cada criança é respeitada in sua singularidade, no seu tempo e nas suas dificuldades.
+                    Acredito em um atendimento leve, acolhedor e individualizado, onde cada criança é respeitada em sua singularidade, no seu tempo e nas suas dificuldades.
                   </p>
-                </div>
+                </ScrollReveal>
 
-                <div className="space-y-6 flex flex-col justify-between h-full">
+                <ScrollReveal delay={500} className="space-y-6 flex flex-col justify-between h-full">
                   <div className="space-y-4">
                     <p className="text-[#E6DFD3]/85 text-sm sm:text-base leading-relaxed font-light">
                       Minha trajetória profissional me aproximou não apenas da nutrição comportamental, mas também do universo do neurodesenvolvimento infantil, despertando ainda mais meu interesse por seletividade alimentar, flexibilidade alimentar e autonomia nas refeições.
@@ -406,7 +430,7 @@ export default function Index() {
                     <span>Agende sua consulta</span> 
                     <span className="transition-transform duration-500 group-hover:translate-x-2">🌟</span>
                   </button>
-                </div>
+                </ScrollReveal>
               </div>
 
             </div>
@@ -434,12 +458,14 @@ export default function Index() {
             <div className="lg:col-span-6 space-y-4 md:space-y-12 text-left pb-2 lg:pb-16 relative z-10">
               
               {/* Massive Condensed Heading styled exactly like image */}
-              <h2 className="font-sans font-black tracking-tighter text-[2.75rem] sm:text-[4.75rem] lg:text-[5.5rem] leading-[0.9] text-[#E6DFD3] uppercase select-none">
-                MUITO ALÉM DA<br/>ALIMENTAÇÃO
-              </h2>
+              <ScrollReveal delay={100}>
+                <h2 className="font-sans font-black tracking-tighter text-[2.75rem] sm:text-[4.75rem] lg:text-[5.5rem] leading-[0.9] text-[#E6DFD3] uppercase select-none">
+                  MUITO ALÉM DA<br/>ALIMENTAÇÃO
+                </h2>
+              </ScrollReveal>
 
               {/* Exact Description matching screenshot */}
-              <div className="max-w-xl space-y-4 text-[#E6DFD3]/85 text-sm sm:text-base md:text-lg font-light leading-relaxed">
+              <ScrollReveal delay={250} className="max-w-xl space-y-4 text-[#E6DFD3]/85 text-sm sm:text-base md:text-lg font-light leading-relaxed">
                 <p>
                   Meu propósito é ajudar crianças, adults e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
                 </p>
@@ -449,15 +475,29 @@ export default function Index() {
                 <p>
                   Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
                 </p>
-              </div>
+              </ScrollReveal>
             </div>
 
-            {/* Right Column: overlapping portrait cutout with cushion pillow */}
+            {/* Right Column: overlapping portrait cutout with cushion pillow and brightness/reveal transition */}
             <div className="lg:col-span-6 flex justify-end items-end w-[calc(100%+3rem)] -mr-6 md:w-full md:mr-0 relative h-[400px] xs:h-[460px] sm:h-[500px] lg:h-[720px] overflow-hidden -mt-4 lg:mt-0 z-0">
+              {/* Dark tint overlay for cutout portrait that fades smoothly */}
+              <div 
+                className={`absolute inset-0 bg-[#141312] transition-opacity duration-1200 ease-out z-15 pointer-events-none ${
+                  cutoutVisible ? "opacity-0" : "opacity-40"
+                }`}
+              />
+
               <img 
                 src="/images/gabi-cutout.png" 
                 alt="Gabriela Siman Cutout Portrait" 
-                className="w-full h-full object-contain object-right-bottom select-none pointer-events-none filter brightness-[0.98] scale-[1.48] md:scale-110 origin-bottom-right z-10 translate-y-1"
+                style={{
+                  transition: "transform 1.4s cubic-bezier(0.16, 1, 0.3, 1), filter 1.4s ease-out"
+                }}
+                className={`w-full h-full object-contain object-right-bottom select-none pointer-events-none origin-bottom-right z-10 translate-y-1 ${
+                  cutoutVisible 
+                    ? "brightness-105 saturate-100 scale-[1.48] md:scale-110 translate-x-0 filter-none" 
+                    : "brightness-[0.7] saturate-[0.5] scale-[1.51] md:scale-[1.13] translate-x-3 blur-[1px]"
+                }`}
               />
               {/* Gradient layer seamlessly transitioning into the footer background color (#0B0A09) */}
               <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#0B0A09] via-[#0B0A09]/80 to-transparent z-20 pointer-events-none"></div>
