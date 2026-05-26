@@ -119,8 +119,8 @@ export default function Index() {
           </button>
         </div>
 
-        {/* Mobile Navigation Dropdown Menu - Highly Polished and Blur Focused */}
-        <div className={`md:hidden fixed top-[56px] left-0 right-0 bottom-0 bg-[#141312]/98 border-t border-[#E6DFD3]/10 backdrop-blur-3xl transition-all duration-500 z-50 flex flex-col justify-between ${
+        {/* Mobile Navigation Dropdown Menu - Solid background with high Z-Index */}
+        <div className={`md:hidden fixed top-[56px] left-0 right-0 bottom-0 bg-[#141312] border-t border-[#E6DFD3]/10 transition-all duration-500 z-[100] flex flex-col justify-between ${
           mobileMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-5 pointer-events-none"
         }`}>
           <div className="px-6 py-8 flex flex-col gap-6 text-sm sm:text-base uppercase tracking-widest font-semibold">
@@ -144,7 +144,7 @@ export default function Index() {
             ))}
           </div>
 
-          <div className="p-6 bg-[#0B0A09]/90 border-t border-[#E6DFD3]/10 space-y-4">
+          <div className="p-6 bg-[#0B0A09] border-t border-[#E6DFD3]/10 space-y-4">
             <button
               onClick={() => handleBooking("Contato Mobile")}
               className="w-full bg-[#E6DFD3] text-[#141312] text-xs uppercase tracking-widest py-4 rounded-full font-bold text-center flex items-center justify-center gap-2 active:scale-95 transition-transform"
@@ -440,13 +440,13 @@ export default function Index() {
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
                 </p>
                 <p>
-                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação in algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
+                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
                 </p>
               </div>
             </div>
 
             {/* Right Column: overlapping portrait cutout with cushion pillow */}
-            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[450px] sm:h-[650px] lg:h-[720px] overflow-hidden">
+            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[450px] sm:h-[600px] lg:h-[720px] overflow-hidden">
               <img 
                 src="/images/gabi-cutout.png" 
                 alt="Gabriela Siman Cutout Portrait" 
