@@ -446,11 +446,11 @@ export default function Index() {
             </div>
 
             {/* Right Column: overlapping portrait cutout with cushion pillow */}
-            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[360px] xs:h-[420px] sm:h-[500px] lg:h-[720px] overflow-hidden -mt-4 lg:mt-0 z-0">
+            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[400px] xs:h-[460px] sm:h-[500px] lg:h-[720px] overflow-hidden -mt-4 lg:mt-0 z-0">
               <img 
                 src="/images/gabi-cutout.png" 
                 alt="Gabriela Siman Cutout Portrait" 
-                className="w-full h-full object-contain object-bottom select-none pointer-events-none filter brightness-[0.98] scale-[1.28] origin-bottom z-10"
+                className="w-full h-full object-contain object-bottom select-none pointer-events-none filter brightness-[0.98] scale-[1.48] md:scale-110 origin-bottom z-10"
               />
               {/* Gradient layer seamlessly transitioning into the footer background color (#0B0A09) */}
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0B0A09] via-[#141312]/85 to-transparent z-20 pointer-events-none"></div>
