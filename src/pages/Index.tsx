@@ -179,7 +179,7 @@ export default function Index() {
         {/* SECTION 1: IMMERSIVE FULL-BLEED HERO COVER BANNER */}
         <section 
           id="hero" 
-          className="relative h-screen w-full overflow-hidden cursor-pointer bg-[#141312]"
+          className="relative h-[44vh] xs:h-[48vh] sm:h-[65vh] md:h-screen w-full overflow-hidden cursor-pointer bg-[#141312]"
           onClick={() => scrollToSection("quem-sou")}
         >
           {/* Edge-to-edge Cinematic background */}
@@ -199,8 +199,8 @@ export default function Index() {
             {/* Soft top gradient to keep text readable */}
             <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#141312]/65 to-transparent z-10 pointer-events-none"></div>
             
-            {/* Soft, Subtle and elegant base gradient overlay (smaller height to not overshadow lower elements of the photo) */}
-            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#141312] to-transparent z-10 pointer-events-none"></div>
+            {/* Soft, Subtle and elegant base gradient overlay blending perfectly into next section */}
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#141312] via-[#141312]/80 to-transparent z-10 pointer-events-none"></div>
           </div>
         </section>
 
@@ -208,7 +208,7 @@ export default function Index() {
         {/* SECTION 2: QUEM SOU EU? */}
         <section 
           id="quem-sou" 
-          className="min-h-screen flex flex-col justify-center py-16 sm:py-24 px-4 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative bg-[#141312]"
+          className="min-h-screen flex flex-col justify-center pt-8 pb-16 sm:py-24 px-4 sm:px-12 lg:px-24 border-b border-[#E6DFD3]/10 relative bg-[#141312]"
         >
           {/* Subtle design backdrop glows */}
           <div className="absolute top-1/4 right-1/4 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] rounded-full bg-stone-900/40 blur-3xl -z-10 pointer-events-none"></div>
@@ -411,7 +411,7 @@ export default function Index() {
                     Sou apaixonada pelo cuidado infantil, pelo desenvolvimento humano e pela forma como a alimentação pode transformar relações, emoções e vivências dentro de uma família.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                    Acredito em um atendimento leve, acolhedor e individualizado, onde cada criança é respeitada em sua singularidade, no seu tempo and nas suas dificuldades.
+                    Acredito em um atendimento leve, acolhedor e individualizado, onde cada criança é respeitada em sua singularidade, no seu tempo e nas suas dificuldades.
                   </p>
                 </ScrollReveal>
 
