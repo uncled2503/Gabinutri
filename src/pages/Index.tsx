@@ -305,7 +305,7 @@ export default function Index() {
                     Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções e desafios diferentes.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                    No meu trabalho, busco olhar para tudo isso com cuidado and escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
+                    No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
                   </p>
                 </div>
 
@@ -440,19 +440,20 @@ export default function Index() {
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
                 </p>
                 <p>
-                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
+                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação in algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
                 </p>
               </div>
             </div>
 
             {/* Right Column: overlapping portrait cutout with cushion pillow */}
-            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[450px] sm:h-[600px] lg:h-[680px]">
-              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#141312] via-transparent to-transparent z-10 pointer-events-none"></div>
+            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[450px] sm:h-[650px] lg:h-[720px] overflow-hidden">
               <img 
                 src="/images/gabi-cutout.png" 
                 alt="Gabriela Siman Cutout Portrait" 
-                className="w-full h-full object-contain object-bottom select-none pointer-events-none filter brightness-[0.98] transform translate-y-4"
+                className="w-full h-full object-contain object-bottom select-none pointer-events-none filter brightness-[0.98] scale-110 origin-bottom z-10"
               />
+              {/* Gradient layer always on top of the image to smooth out the bottom cutout boundary */}
+              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#141312] via-[#141312]/80 to-transparent z-20 pointer-events-none"></div>
             </div>
 
           </div>
