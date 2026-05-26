@@ -421,10 +421,10 @@ export default function Index() {
           </div>
 
           {/* Grid Layout conforming to reference */}
-          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end relative z-10 pt-10">
+          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 lg:gap-16 items-end relative z-10 pt-4 lg:pt-10">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-6 space-y-6 md:space-y-12 text-left pb-4 lg:pb-16">
+            <div className="lg:col-span-6 space-y-4 md:space-y-12 text-left pb-2 lg:pb-16">
               
               {/* Massive Condensed Heading styled exactly like image */}
               <h2 className="font-sans font-black tracking-tighter text-[2.75rem] sm:text-[4.75rem] lg:text-[5.5rem] leading-[0.9] text-[#E6DFD3] uppercase select-none">
@@ -432,7 +432,7 @@ export default function Index() {
               </h2>
 
               {/* Exact Description matching screenshot */}
-              <div className="max-w-xl space-y-5 text-[#E6DFD3]/85 text-sm sm:text-base md:text-lg font-light leading-relaxed">
+              <div className="max-w-xl space-y-4 text-[#E6DFD3]/85 text-sm sm:text-base md:text-lg font-light leading-relaxed">
                 <p>
                   Meu propósito é ajudar crianças, adults e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
                 </p>
@@ -446,14 +446,14 @@ export default function Index() {
             </div>
 
             {/* Right Column: overlapping portrait cutout with cushion pillow */}
-            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[450px] sm:h-[600px] lg:h-[720px] overflow-hidden">
+            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[310px] xs:h-[360px] sm:h-[500px] lg:h-[720px] overflow-hidden -mt-4 lg:mt-0">
               <img 
                 src="/images/gabi-cutout.png" 
                 alt="Gabriela Siman Cutout Portrait" 
                 className="w-full h-full object-contain object-bottom select-none pointer-events-none filter brightness-[0.98] scale-110 origin-bottom z-10"
               />
               {/* Gradient layer always on top of the image to smooth out the bottom cutout boundary */}
-              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#141312] via-[#141312]/80 to-transparent z-20 pointer-events-none"></div>
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#141312] via-[#141312]/85 to-transparent z-20 pointer-events-none"></div>
             </div>
 
           </div>
