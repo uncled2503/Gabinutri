@@ -5,6 +5,7 @@ import { ArrowRight, Sparkles, MessageCircle, Heart, Star, MapPin, Phone, Mail, 
 import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/ScrollReveal";
 import RevealPhoto from "@/components/RevealPhoto";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Index() {
   const { toast } = useToast();
@@ -512,6 +513,9 @@ export default function Index() {
         </section>
 
       </main>
+
+      {/* Floating WhatsApp Button */}
+      <FloatingWhatsApp />
 
       {/* FOOTER - Responsively redesigned */}
       <footer className="bg-[#0B0A09] text-[#E6DFD3]/60 py-16 sm:py-20 relative overflow-hidden z-10 -mt-1">
