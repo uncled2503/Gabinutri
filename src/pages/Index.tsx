@@ -170,17 +170,17 @@ export default function Index() {
         >
           {/* Edge-to-edge Cinematic background */}
           <div className="absolute inset-0 z-0">
-            {/* Desktop Hero Image */}
+            {/* Desktop Hero Image - optimized to align top to prevent head cutting on wide monitors */}
             <img 
               src="/images/gabi-hero.png" 
               alt="Gabriela Siman Full Bleed Hero Cover" 
-              className="hidden md:block w-full h-full object-cover object-center filter brightness-95"
+              className="hidden md:block w-full h-full object-cover object-top filter brightness-95"
             />
-            {/* Mobile Hero Image */}
+            {/* Mobile Hero Image - optimized layout */}
             <img 
               src="/images/gabi-hero-mobile.png" 
               alt="Gabriela Siman Full Bleed Hero Cover Mobile" 
-              className="block md:hidden w-full h-full object-cover object-center filter brightness-95"
+              className="block md:hidden w-full h-full object-cover object-top filter brightness-95"
             />
             {/* Soft top gradient to keep text readable */}
             <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#141312]/65 to-transparent z-10 pointer-events-none"></div>
@@ -312,7 +312,7 @@ export default function Index() {
                     Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções e desafios diferentes.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                    No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam with a alimentação.
+                    No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
                   </p>
                 </div>
 
@@ -385,7 +385,7 @@ export default function Index() {
                     Sou apaixonada pelo cuidado infantil, pelo desenvolvimento humano e pela forma como a alimentação pode transformar relações, emoções e vivências dentro de uma família.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                    Acredito em um atendimento leve, acolhedor e individualizado, onde cada criança é respeitada em sua singularidade, no seu tempo e nas suas dificuldades.
+                    Acredito em um atendimento leve, acolhedor e individualizado, onde cada criança é respeitada in sua singularidade, no seu tempo e nas suas dificuldades.
                   </p>
                 </div>
 
