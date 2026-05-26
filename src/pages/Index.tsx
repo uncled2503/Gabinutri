@@ -188,30 +188,33 @@ export default function Index() {
       {/* DECK WRAPPER */}
       <main>
 
-        {/* SECTION 1: IMMERSIVE FULL-BLEED HERO COVER BANNER */}
+        {/* SECTION 1: IMMERSIVE HERO COVER BANNER */}
         <section 
           id="hero" 
-          className="relative h-[62vh] xs:h-[68vh] sm:h-[80vh] md:h-screen w-full overflow-hidden cursor-pointer bg-[#141312]"
+          className="relative h-auto md:h-screen w-full overflow-hidden cursor-pointer bg-[#141312] flex flex-col md:block"
           onClick={() => scrollToSection("quem-sou")}
         >
-          {/* Edge-to-edge Cinematic background */}
-          <div className="absolute inset-0 z-0 flex items-center justify-center">
-            {/* Desktop Hero Image - restored to perfect full bleed cover aligned top */}
-            <img 
-              src="/images/gabi-hero.png" 
-              alt="Gabriela Siman Hero Cover" 
-              className="hidden md:block w-full h-full object-cover object-top filter brightness-100"
-            />
-            {/* Mobile Hero Image - resized to fit mobile view screens gracefully */}
+          {/* Mobile Image Container - renders dynamically at natural aspect ratio so there are zero empty spaces */}
+          <div className="block md:hidden w-full relative">
             <img 
               src="/images/gabi-hero-mobile.png" 
               alt="Gabriela Siman Hero Cover Mobile" 
-              className="block md:hidden w-full h-full object-contain filter brightness-105"
+              className="w-full h-auto object-cover filter brightness-105 block"
+            />
+            {/* Elegant fading bottom gradient on mobile to blend beautifully with the next section background */}
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#141312] to-transparent z-10 pointer-events-none"></div>
+          </div>
+
+          {/* Desktop Image Container */}
+          <div className="hidden md:block absolute inset-0 z-0">
+            <img 
+              src="/images/gabi-hero.png" 
+              alt="Gabriela Siman Hero Cover" 
+              className="w-full h-full object-cover object-top filter brightness-100"
             />
             {/* Soft top gradient to keep text readable */}
             <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#141312]/65 to-transparent z-10 pointer-events-none"></div>
-            
-            {/* Soft, Subtle and elegant base gradient overlay blending perfectly into next section */}
+            {/* Subtle and elegant base gradient overlay blending perfectly into next section */}
             <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#141312] via-[#141312]/85 to-transparent z-10 pointer-events-none"></div>
           </div>
         </section>
