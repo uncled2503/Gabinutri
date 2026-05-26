@@ -81,13 +81,24 @@ export default function Index() {
             : "bg-[#141312]/40 backdrop-blur-sm py-4 md:py-6 border-b border-[#E6DFD3]/5"
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <div className="flex items-center gap-2.5 group cursor-pointer" onClick={() => scrollToSection("hero")}>
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#E6DFD3]/30 flex items-center justify-center transition-all duration-500 group-hover:rotate-180 group-hover:border-[#E6DFD3]">
-              <span className="font-serif text-[10px] font-bold text-[#E6DFD3]">G</span>
+          
+          {/* Header Brand Logo Integration */}
+          <div className="flex items-center gap-3 group cursor-pointer" onClick={() => scrollToSection("hero")}>
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#E6DFD3]/20 flex items-center justify-center overflow-hidden bg-[#1A1917] p-1 transition-all duration-500 group-hover:scale-105 group-hover:border-[#E6DFD3]">
+              <img 
+                src="/images/logo-monogram.png" 
+                alt="Gabriela Siman Monograma" 
+                className="w-full h-full object-contain transition-transform duration-500 group-hover:rotate-12"
+              />
             </div>
-            <span className="font-serif text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.25em] uppercase font-semibold text-[#E6DFD3] transition-colors duration-300 group-hover:text-[#F5EFE4]">
-              Gabriela Siman
-            </span>
+            <div className="flex flex-col">
+              <span className="font-serif text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.25em] uppercase font-semibold text-[#E6DFD3] transition-colors duration-300 group-hover:text-[#F5EFE4]">
+                Gabriela Siman
+              </span>
+              <span className="text-[7.5px] uppercase tracking-[0.18em] text-[#E6DFD3]/50 font-light -mt-0.5">
+                Nutricionista
+              </span>
+            </div>
           </div>
 
           {/* Desktop Navigation Link Highlights */}
@@ -422,7 +433,7 @@ export default function Index() {
                       Minha trajetória profissional me aproximou não apenas da nutrição comportamental, mas também do universo do neurodesenvolvimento infantil, despertando ainda mais meu interesse por seletividade alimentar, flexibilidade alimentar e autonomia nas refeições.
                     </p>
                     <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão e com muito respeito.
+                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão and com muito respeito.
                     </p>
                   </div>
 
@@ -470,7 +481,7 @@ export default function Index() {
               {/* Exact Description matching screenshot */}
               <ScrollReveal delay={250} className="max-w-xl space-y-4 text-[#E6DFD3]/85 text-sm sm:text-base md:text-lg font-light leading-relaxed">
                 <p>
-                  Meu propósito é ajudar crianças, adults e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
+                  Meu propósito é ajudar crianças, adultos e famílias a construírem uma relação mais leve, saudável e acolhedora com a comida.
                 </p>
                 <p>
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
@@ -521,12 +532,17 @@ export default function Index() {
       <footer className="bg-[#0B0A09] text-[#E6DFD3]/60 py-16 sm:py-20 relative overflow-hidden z-10 -mt-1">
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#E6DFD3]/10 via-[#E6DFD3]/40 to-[#E6DFD3]/10"></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start">
           
-          <div className="space-y-4 md:space-y-6 text-center md:text-left">
-            <h3 className="font-serif text-xl sm:text-2xl font-bold tracking-[0.2em] text-[#E6DFD3] uppercase">
-              Gabriela Siman
-            </h3>
+          <div className="space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
+            {/* Integrated high-end full logo */}
+            <div className="max-w-[220px] h-auto p-1.5 bg-[#141312]/35 border border-[#E6DFD3]/10 rounded-xl">
+              <img 
+                src="/images/logo-full.png" 
+                alt="Logo Completo Gabriela Siman" 
+                className="w-full h-auto object-contain brightness-105"
+              />
+            </div>
             <p className="text-xs leading-relaxed max-w-xs mx-auto md:mx-0 font-light text-[#E6DFD3]/70">
               Nutricionista comportamental e infantil comprometida em transformar a alimentação em um momento leve, sem culpas e com muito afeto.
             </p>
@@ -539,7 +555,7 @@ export default function Index() {
                 <MapPin className="w-4 h-4 text-[#E6DFD3]/50 shrink-0" />
                 Atendimento Presencial e Online
               </li>
-              <li className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors cursor-pointer">
+              <li className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors cursor-pointer" onClick={() => handleBooking("Contato Rodapé")}>
                 <Phone className="w-4 h-4 text-[#E6DFD3]/50 shrink-0" />
                 (32) 99755-0533
               </li>
