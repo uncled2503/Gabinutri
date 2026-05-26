@@ -433,7 +433,7 @@ export default function Index() {
                       Minha trajetória profissional me aproximou não apenas da nutrição comportamental, mas também do universo do neurodesenvolvimento infantil, despertando ainda mais meu interesse por seletividade alimentar, flexibilidade alimentar e autonomia nas refeições.
                     </p>
                     <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão and com muito respeito.
+                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão e com muito respeito.
                     </p>
                   </div>
 
@@ -493,7 +493,7 @@ export default function Index() {
             </div>
 
             {/* Right Column: portrait cutout with matching bottom padding alignment */}
-            <div className="lg:col-span-6 flex justify-end items-end w-[calc(100%+3rem)] -mr-6 md:w-full md:mr-0 relative h-[400px] xs:h-[460px] sm:h-[500px] lg:h-[720px] overflow-hidden -mt-4 lg:mt-0 z-0 pb-2 lg:pb-16">
+            <div className="lg:col-span-6 flex justify-end items-end w-[calc(100%+3rem)] -mr-6 md:w-full md:mr-0 relative h-[400px] xs:h-[460px] sm:h-[500px] lg:h-[720px] overflow-hidden -mt-4 lg:mt-0 z-0 pb-0">
               {/* Dark tint overlay for cutout portrait that fades smoothly */}
               <div 
                 className={`absolute inset-0 bg-[#141312] transition-opacity duration-1200 ease-out z-15 pointer-events-none ${
@@ -507,14 +507,14 @@ export default function Index() {
                 style={{
                   transition: "transform 1.4s cubic-bezier(0.16, 1, 0.3, 1), filter 1.4s ease-out"
                 }}
-                className={`w-full h-full object-contain object-right-bottom select-none pointer-events-none origin-bottom-right z-10 translate-y-1 ${
+                className={`w-full h-full object-contain object-right-bottom select-none pointer-events-none origin-bottom-right z-10 translate-y-0 ${
                   cutoutVisible 
                     ? "brightness-105 saturate-100 scale-[1.48] md:scale-110 translate-x-0 filter-none" 
                     : "brightness-[0.7] saturate-[0.5] scale-[1.51] md:scale-[1.13] translate-x-3 blur-[1px]"
                 }`}
               />
-              {/* Gradient layer seamlessly transitioning into the footer background color (#0B0A09) */}
-              <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#0B0A09] via-[#0B0A09]/80 to-transparent z-20 pointer-events-none"></div>
+              {/* Corrected matching background color gradient blend to prevent visual lines */}
+              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#141312] via-[#141312]/70 to-transparent z-20 pointer-events-none"></div>
             </div>
 
           </div>
