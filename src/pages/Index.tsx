@@ -179,7 +179,7 @@ export default function Index() {
         {/* SECTION 1: IMMERSIVE FULL-BLEED HERO COVER BANNER */}
         <section 
           id="hero" 
-          className="relative h-[44vh] xs:h-[48vh] sm:h-[65vh] md:h-screen w-full overflow-hidden cursor-pointer bg-[#141312]"
+          className="relative h-[62vh] xs:h-[68vh] sm:h-[80vh] md:h-screen w-full overflow-hidden cursor-pointer bg-[#141312]"
           onClick={() => scrollToSection("quem-sou")}
         >
           {/* Edge-to-edge Cinematic background */}
@@ -190,17 +190,17 @@ export default function Index() {
               alt="Gabriela Siman Full Bleed Hero Cover" 
               className="hidden md:block w-full h-full object-cover object-top filter brightness-100"
             />
-            {/* Mobile Hero Image - optimized with contain to preserve the whole framing and blend into the background */}
+            {/* Mobile Hero Image - restored to full object-cover and alignment to fill mobile screens gracefully */}
             <img 
               src="/images/gabi-hero-mobile.png" 
               alt="Gabriela Siman Full Bleed Hero Cover Mobile" 
-              className="block md:hidden w-full h-full object-contain object-top pt-12 filter brightness-105"
+              className="block md:hidden w-full h-full object-cover object-top filter brightness-105"
             />
             {/* Soft top gradient to keep text readable */}
             <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#141312]/65 to-transparent z-10 pointer-events-none"></div>
             
             {/* Soft, Subtle and elegant base gradient overlay blending perfectly into next section */}
-            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#141312] via-[#141312]/80 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#141312] via-[#141312]/85 to-transparent z-10 pointer-events-none"></div>
           </div>
         </section>
 
