@@ -196,11 +196,11 @@ export default function Index() {
         >
           {/* Edge-to-edge Cinematic background */}
           <div className="absolute inset-0 z-0 flex items-center justify-center">
-            {/* Desktop Hero Image - resized to fit the screen size perfectly without cutting off her head or body */}
+            {/* Desktop Hero Image - restored to perfect full bleed cover aligned top */}
             <img 
               src="/images/gabi-hero.png" 
               alt="Gabriela Siman Hero Cover" 
-              className="hidden md:block w-full h-full object-contain filter brightness-100"
+              className="hidden md:block w-full h-full object-cover object-top filter brightness-100"
             />
             {/* Mobile Hero Image - resized to fit mobile view screens gracefully */}
             <img 
@@ -348,7 +348,7 @@ export default function Index() {
                     Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções e desafios diferentes.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                    No meu trabalho, busco olhar para tudo isso com cuidado and escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
+                    No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
                   </p>
                 </ScrollReveal>
 
@@ -433,7 +433,7 @@ export default function Index() {
                       Minha trajetória profissional me aproximou não apenas da nutrição comportamental, mas também do universo do neurodesenvolvimento infantil, despertando ainda mais meu interesse por seletividade alimentar, flexibilidade alimentar e autonomia nas refeições.
                     </p>
                     <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão e com muito respeito.
+                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão and com muito respeito.
                     </p>
                   </div>
 
