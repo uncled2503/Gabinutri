@@ -48,12 +48,12 @@ export default function Index() {
   }, []);
 
   const handleBooking = (type: string) => {
-    const message = `Olá Gabriela! Vi seu site e gostaria de agendar uma consulta focada em ${type}.`;
+    const message = `Olá, Gabriela!\nVim pelo site e gostaria de entender melhor como funciona o seu acompanhamento.`;
     const whatsappUrl = `https://wa.me/553299755053?text=${encodeURIComponent(message)}`;
     
     toast({
       title: "Conectando ao WhatsApp...",
-      description: `Preparando seu contato para: ${type}`,
+      description: `Iniciando contato com Gabriela Siman...`,
     });
     
     setTimeout(() => {
