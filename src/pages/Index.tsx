@@ -478,8 +478,8 @@ export default function Index() {
               </ScrollReveal>
             </div>
 
-            {/* Right Column: overlapping portrait cutout with cushion pillow and brightness/reveal transition */}
-            <div className="lg:col-span-6 flex justify-end items-end w-[calc(100%+3rem)] -mr-6 md:w-full md:mr-0 relative h-[400px] xs:h-[460px] sm:h-[500px] lg:h-[720px] overflow-hidden -mt-4 lg:mt-0 z-0">
+            {/* Right Column: portrait cutout with matching bottom padding alignment */}
+            <div className="lg:col-span-6 flex justify-end items-end w-[calc(100%+3rem)] -mr-6 md:w-full md:mr-0 relative h-[400px] xs:h-[460px] sm:h-[500px] lg:h-[720px] overflow-hidden -mt-4 lg:mt-0 z-0 pb-2 lg:pb-16">
               {/* Dark tint overlay for cutout portrait that fades smoothly */}
               <div 
                 className={`absolute inset-0 bg-[#141312] transition-opacity duration-1200 ease-out z-15 pointer-events-none ${
