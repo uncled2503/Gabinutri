@@ -49,7 +49,7 @@ export default function Index() {
 
   const handleBooking = (type: string) => {
     const message = `Olá Gabriela! Vi seu site e gostaria de agendar uma consulta focada em ${type}.`;
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/553299755053?text=${encodeURIComponent(message)}`;
     
     toast({
       title: "Conectando ao WhatsApp...",
@@ -169,7 +169,7 @@ export default function Index() {
             Falar no WhatsApp
           </button>
           <p className="text-[10px] text-center text-[#E6DFD3]/40 tracking-wider">
-            Gabriela Siman • CRN-3 / 123456
+            Gabriela Siman • CRN-9 / 36803
           </p>
         </div>
       </div>
@@ -283,7 +283,7 @@ export default function Index() {
 
               <ScrollReveal delay={450} className="pt-4 text-center lg:text-right w-full max-w-[320px]">
                 <span className="text-[10px] tracking-[0.35em] uppercase text-[#E6DFD3]/40 font-semibold">
-                  Gabriela Siman • CRN-3
+                  Gabriela Siman • CRN-9 / 36803
                 </span>
               </ScrollReveal>
             </div>
@@ -541,11 +541,11 @@ export default function Index() {
               </li>
               <li className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors cursor-pointer">
                 <Phone className="w-4 h-4 text-[#E6DFD3]/50 shrink-0" />
-                (11) 99999-9999
+                (32) 99755-0533
               </li>
               <li className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors cursor-pointer">
                 <Mail className="w-4 h-4 text-[#E6DFD3]/50 shrink-0" />
-                contato@gabrielasiman.com
+                gabrielasimanutri@gmail.com
               </li>
             </ul>
           </div>
@@ -554,7 +554,7 @@ export default function Index() {
             <h4 className="text-xs uppercase tracking-[0.25em] font-bold text-[#E6DFD3]">Registro Profissional</h4>
             <p className="text-xs font-light text-[#E6DFD3]/75 leading-relaxed">
               Gabriela Siman<br />
-              CRN-3 / 123456
+              CRN-9 / 36803
             </p>
             <p className="text-[10px] text-[#E6DFD3]/35 pt-2 md:pt-4">
               © {new Date().getFullYear()} Gabriela Siman. Todos os direitos reservados.
