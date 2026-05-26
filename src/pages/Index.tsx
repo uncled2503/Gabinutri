@@ -305,7 +305,7 @@ export default function Index() {
                     Acredito que a alimentação vai muito além de dietas ou regras rígidas. Cada pessoa tem uma história com a comida, uma rotina, emoções e desafios diferentes.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                    No meu trabalho, busco olhar para tudo isso com cuidado e escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
+                    No meu trabalho, busco olhar para tudo isso com cuidado and escuta. Meu objetivo é te ajudar a entender melhor seu corpo, sua fome e os sentimentos que muitas vezes se misturam com a alimentação.
                   </p>
                 </div>
 
@@ -450,7 +450,7 @@ export default function Index() {
               <img 
                 src="/images/gabi-cutout.png" 
                 alt="Gabriela Siman Cutout Portrait" 
-                className="w-full h-full object-contain object-bottom select-none pointer-events-none filter brightness-[0.98] scale-[1.48] md:scale-110 origin-bottom z-10"
+                className="w-full h-full object-contain object-right-bottom select-none pointer-events-none filter brightness-[0.98] scale-[1.48] md:scale-110 origin-bottom-right z-10 translate-x-[15%] md:translate-x-0"
               />
               {/* Gradient layer seamlessly transitioning into the footer background color (#0B0A09) */}
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0B0A09] via-[#141312]/85 to-transparent z-20 pointer-events-none"></div>
