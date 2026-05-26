@@ -73,9 +73,11 @@ export default function Index() {
       
       {/* PREMIUM FLOATING FIXED HEADER - Highly Responsive */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled 
-          ? "bg-[#141312]/95 backdrop-blur-xl py-3 md:py-4 border-b border-[#E6DFD3]/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
-          : "bg-[#141312]/40 backdrop-blur-sm py-4 md:py-6 border-b border-[#E6DFD3]/5"
+        mobileMenuOpen
+          ? "bg-[#141312] py-4 border-b border-[#E6DFD3]/10"
+          : scrolled 
+            ? "bg-[#141312]/95 backdrop-blur-xl py-3 md:py-4 border-b border-[#E6DFD3]/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+            : "bg-[#141312]/40 backdrop-blur-sm py-4 md:py-6 border-b border-[#E6DFD3]/5"
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-2.5 group cursor-pointer" onClick={() => scrollToSection("hero")}>
@@ -130,46 +132,46 @@ export default function Index() {
             {mobileMenuOpen ? <X className="w-6 h-6 animate-pulse" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-
-        {/* Mobile Navigation Dropdown Menu - Solid background with high Z-Index */}
-        <div className={`md:hidden fixed top-[56px] left-0 right-0 bottom-0 bg-[#141312] border-t border-[#E6DFD3]/10 transition-all duration-500 z-[100] flex flex-col justify-between ${
-          mobileMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-5 pointer-events-none"
-        }`}>
-          <div className="px-6 py-8 flex flex-col gap-6 text-sm sm:text-base uppercase tracking-widest font-semibold">
-            {[
-              { id: "quem-sou", label: "Quem Sou Eu" },
-              { id: "comportamental", label: "Nutri Comportamental" },
-              { id: "terapeuta", label: "Terapeuta Alimentar" },
-              { id: "alem", label: "Muito Além" }
-            ].map((item, index) => (
-              <button 
-                key={item.id}
-                onClick={() => scrollToSection(item.id)} 
-                style={{ animationDelay: `${index * 75}ms` }}
-                className={`text-left py-3 border-b border-[#E6DFD3]/5 flex items-center justify-between transition-colors ${
-                  activeSection === item.id ? "text-white" : "text-[#E6DFD3]/60"
-                } ${mobileMenuOpen ? "animate-fade-in-up" : ""}`}
-              >
-                <span>{item.label}</span>
-                <ChevronRight className="w-4 h-4 text-[#E6DFD3]/30" />
-              </button>
-            ))}
-          </div>
-
-          <div className="p-6 bg-[#0B0A09] border-t border-[#E6DFD3]/10 space-y-4">
-            <button
-              onClick={() => handleBooking("Contato Mobile")}
-              className="w-full bg-[#E6DFD3] text-[#141312] text-xs uppercase tracking-widest py-4 rounded-full font-bold text-center flex items-center justify-center gap-2 active:scale-95 transition-transform"
-            >
-              <MessageCircle className="w-4 h-4" />
-              Falar no WhatsApp
-            </button>
-            <p className="text-[10px] text-center text-[#E6DFD3]/40 tracking-wider">
-              Gabriela Siman • CRN-3 / 123456
-            </p>
-          </div>
-        </div>
       </header>
+
+      {/* Mobile Navigation Dropdown Menu - Moved outside header to prevent backdrop-filter bugs */}
+      <div className={`md:hidden fixed inset-0 bg-[#141312] z-[45] flex flex-col justify-between pt-24 pb-8 px-6 transition-all duration-500 ${
+        mobileMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-5 pointer-events-none"
+      }`}>
+        <div className="px-2 flex flex-col gap-6 text-sm sm:text-base uppercase tracking-widest font-semibold">
+          {[
+            { id: "quem-sou", label: "Quem Sou Eu" },
+            { id: "comportamental", label: "Nutri Comportamental" },
+            { id: "terapeuta", label: "Terapeuta Alimentar" },
+            { id: "alem", label: "Muito Além" }
+          ].map((item, index) => (
+            <button 
+              key={item.id}
+              onClick={() => scrollToSection(item.id)} 
+              style={{ animationDelay: `${index * 75}ms` }}
+              className={`text-left py-3.5 border-b border-[#E6DFD3]/5 flex items-center justify-between transition-colors ${
+                activeSection === item.id ? "text-white" : "text-[#E6DFD3]/60"
+              }`}
+            >
+              <span>{item.label}</span>
+              <ChevronRight className="w-4 h-4 text-[#E6DFD3]/30" />
+            </button>
+          ))}
+        </div>
+
+        <div className="p-6 bg-[#0B0A09] border border-[#E6DFD3]/10 rounded-2xl space-y-4">
+          <button
+            onClick={() => handleBooking("Contato Mobile")}
+            className="w-full bg-[#E6DFD3] text-[#141312] text-xs uppercase tracking-widest py-4 rounded-full font-bold text-center flex items-center justify-center gap-2 active:scale-95 transition-transform"
+          >
+            <MessageCircle className="w-4 h-4" />
+            Falar no WhatsApp
+          </button>
+          <p className="text-[10px] text-center text-[#E6DFD3]/40 tracking-wider">
+            Gabriela Siman • CRN-3 / 123456
+          </p>
+        </div>
+      </div>
 
       {/* DECK WRAPPER */}
       <main>
@@ -409,7 +411,7 @@ export default function Index() {
                     Sou apaixonada pelo cuidado infantil, pelo desenvolvimento humano e pela forma como a alimentação pode transformar relações, emoções e vivências dentro de uma família.
                   </p>
                   <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                    Acredito em um atendimento leve, acolhedor e individualizado, onde cada criança é respeitada em sua singularidade, no seu tempo e nas suas dificuldades.
+                    Acredito em um atendimento leve, acolhedor e individualizado, onde cada criança é respeitada em sua singularidade, no seu tempo and nas suas dificuldades.
                   </p>
                 </ScrollReveal>
 
@@ -419,7 +421,7 @@ export default function Index() {
                       Minha trajetória profissional me aproximou não apenas da nutrição comportamental, mas também do universo do neurodesenvolvimento infantil, despertando ainda mais meu interesse por seletividade alimentar, flexibilidade alimentar e autonomia nas refeições.
                     </p>
                     <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão and com muito respeito.
+                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão e com muito respeito.
                     </p>
                   </div>
 
@@ -473,7 +475,7 @@ export default function Index() {
                   Acredito em um cuidado humanizado, individualizado e respeitoso, entendendo que alimentação não envolve apenas nutrientes, mas também emoções, vivências, rotina, comportamento e afeto.
                 </p>
                 <p>
-                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação in algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
+                  Seja através da nutrição comportamental ou da terapia alimentar, meu objetivo é transformar o momento da alimentação em algo mais possível, leve e seguro. <span className="text-amber-400 font-semibold text-lg inline-block align-middle">🌟</span>
                 </p>
               </ScrollReveal>
             </div>
