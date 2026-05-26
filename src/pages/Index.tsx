@@ -170,10 +170,17 @@ export default function Index() {
         >
           {/* Edge-to-edge Cinematic background */}
           <div className="absolute inset-0 z-0">
+            {/* Desktop Hero Image */}
             <img 
               src="/images/gabi-hero.png" 
               alt="Gabriela Siman Full Bleed Hero Cover" 
-              className="w-full h-full object-cover object-center filter brightness-95"
+              className="hidden md:block w-full h-full object-cover object-center filter brightness-95"
+            />
+            {/* Mobile Hero Image */}
+            <img 
+              src="/images/gabi-hero-mobile.png" 
+              alt="Gabriela Siman Full Bleed Hero Cover Mobile" 
+              className="block md:hidden w-full h-full object-cover object-center filter brightness-95"
             />
             {/* Soft top gradient to keep text readable */}
             <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#141312]/65 to-transparent z-10 pointer-events-none"></div>
@@ -453,7 +460,7 @@ export default function Index() {
                 className="w-full h-full object-contain object-right-bottom select-none pointer-events-none filter brightness-[0.98] scale-[1.48] md:scale-110 origin-bottom-right z-10"
               />
               {/* Gradient layer seamlessly transitioning into the footer background color (#0B0A09) */}
-              <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#0B0A09] via-[#0B0A09]/80 to-transparent z-20 pointer-events-none"></div>
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0B0A09] via-[#141312]/85 to-transparent z-20 pointer-events-none"></div>
             </div>
 
           </div>
