@@ -411,7 +411,7 @@ export default function Index() {
         {/* SECTION 5: MUITO ALÉM DA ALIMENTAÇÃO - DESIGN EXCLUSIVO DE CAPA COM CORTE */}
         <section 
           id="alem" 
-          className="min-h-screen flex flex-col justify-between py-12 md:py-24 px-6 sm:px-12 lg:px-24 relative bg-[#141312] overflow-hidden"
+          className="min-h-0 md:min-h-screen flex flex-col justify-between pt-12 pb-0 md:py-24 px-6 sm:px-12 lg:px-24 relative bg-[#141312] overflow-hidden"
         >
           {/* Top Line: name on left, line and slick arrow completely removed */}
           <div className="w-full flex items-center justify-between pb-6 md:pb-12 border-b border-[#E6DFD3]/5">
@@ -424,7 +424,7 @@ export default function Index() {
           <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 lg:gap-16 items-end relative z-10 pt-4 lg:pt-10">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-6 space-y-4 md:space-y-12 text-left pb-2 lg:pb-16">
+            <div className="lg:col-span-6 space-y-4 md:space-y-12 text-left pb-2 lg:pb-16 relative z-10">
               
               {/* Massive Condensed Heading styled exactly like image */}
               <h2 className="font-sans font-black tracking-tighter text-[2.75rem] sm:text-[4.75rem] lg:text-[5.5rem] leading-[0.9] text-[#E6DFD3] uppercase select-none">
@@ -446,14 +446,14 @@ export default function Index() {
             </div>
 
             {/* Right Column: overlapping portrait cutout with cushion pillow */}
-            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[310px] xs:h-[360px] sm:h-[500px] lg:h-[720px] overflow-hidden -mt-4 lg:mt-0">
+            <div className="lg:col-span-6 flex justify-end items-end w-full relative h-[360px] xs:h-[420px] sm:h-[500px] lg:h-[720px] overflow-hidden -mt-4 lg:mt-0 z-0">
               <img 
                 src="/images/gabi-cutout.png" 
                 alt="Gabriela Siman Cutout Portrait" 
-                className="w-full h-full object-contain object-bottom select-none pointer-events-none filter brightness-[0.98] scale-110 origin-bottom z-10"
+                className="w-full h-full object-contain object-bottom select-none pointer-events-none filter brightness-[0.98] scale-[1.28] origin-bottom z-10"
               />
-              {/* Gradient layer always on top of the image to smooth out the bottom cutout boundary */}
-              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#141312] via-[#141312]/85 to-transparent z-20 pointer-events-none"></div>
+              {/* Gradient layer seamlessly transitioning into the footer background color (#0B0A09) */}
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0B0A09] via-[#141312]/85 to-transparent z-20 pointer-events-none"></div>
             </div>
 
           </div>
@@ -462,7 +462,7 @@ export default function Index() {
       </main>
 
       {/* FOOTER - Responsively redesigned */}
-      <footer className="bg-[#0B0A09] border-t border-[#E6DFD3]/10 text-[#E6DFD3]/60 py-16 sm:py-20 relative overflow-hidden">
+      <footer className="bg-[#0B0A09] border-t border-[#E6DFD3]/10 text-[#E6DFD3]/60 py-16 sm:py-20 relative overflow-hidden z-10">
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#E6DFD3]/10 via-[#E6DFD3]/40 to-[#E6DFD3]/10"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
