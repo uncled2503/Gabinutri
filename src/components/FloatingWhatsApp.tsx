@@ -9,7 +9,7 @@ export default function FloatingWhatsApp() {
 
   const handleWhatsAppClick = () => {
     const message = "Olá, Gabriela!\nVim pelo site e gostaria de entender melhor como funciona o seu acompanhamento.";
-    const whatsappUrl = `https://wa.me/553299755053?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5532999755053?text=${encodeURIComponent(message)}`;
     
     toast({
       title: "Conectando ao WhatsApp...",

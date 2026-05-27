@@ -49,7 +49,7 @@ export default function Index() {
 
   const handleBooking = (type: string) => {
     const message = `Olá, Gabriela!\nVim pelo site e gostaria de entender melhor como funciona o seu acompanhamento.`;
-    const whatsappUrl = `https://wa.me/553299755053?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5532999755053?text=${encodeURIComponent(message)}`;
     
     toast({
       title: "Conectando ao WhatsApp...",
@@ -436,7 +436,7 @@ export default function Index() {
                       Minha trajetória profissional me aproximou não apenas da nutrição comportamental, mas também do universo do neurodesenvolvimento infantil, despertando ainda mais meu interesse por seletividade alimentar, flexibilidade alimentar e autonomia nas refeições.
                     </p>
                     <p className="text-[#E6DFD3]/80 text-xs sm:text-sm leading-relaxed font-light">
-                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão and com muito respeito.
+                      Mais do que orientar alimentação, meu propósito é acolher famílias e construir caminhos possíveis, sem culpa, sem pressão e com muito respeito.
                     </p>
                   </div>
 
@@ -560,7 +560,7 @@ export default function Index() {
               </li>
               <li className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors cursor-pointer" onClick={() => handleBooking("Contato Rodapé")}>
                 <Phone className="w-4 h-4 text-[#E6DFD3]/50 shrink-0" />
-                (32) 99755-0533
+                (32) 99975-5053
               </li>
               <li className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors cursor-pointer">
                 <Mail className="w-4 h-4 text-[#E6DFD3]/50 shrink-0" />
