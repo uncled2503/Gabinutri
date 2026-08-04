@@ -49,7 +49,7 @@ export default function Index() {
 
   const handleBooking = (type: string) => {
     const message = `Olá, Gabriela!\nVim pelo site e gostaria de entender melhor como funciona o seu acompanhamento.`;
-    const whatsappUrl = `https://wa.me/5532999755053?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5532998161086?text=${encodeURIComponent(message)}`;
     
     toast({
       title: "Conectando ao WhatsApp...",
@@ -560,7 +560,7 @@ export default function Index() {
               </li>
               <li className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors cursor-pointer" onClick={() => handleBooking("Contato Rodapé")}>
                 <Phone className="w-4 h-4 text-[#E6DFD3]/50 shrink-0" />
-                (32) 99975-5053
+                (32) 99816-1086
               </li>
               <li className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors cursor-pointer">
                 <Mail className="w-4 h-4 text-[#E6DFD3]/50 shrink-0" />
